@@ -13,7 +13,8 @@
 		FBC209B82481971F0060848E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC209B62481971F0060848E /* Main.storyboard */; };
 		FBC209BA248197240060848E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC209B9248197240060848E /* Assets.xcassets */; };
 		FBC209BD248197240060848E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC209BB248197240060848E /* LaunchScreen.storyboard */; };
-		FBC209C8248197240060848E /* GlobalLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209C7248197240060848E /* GlobalLogicTests.swift */; };
+		FBC209D32481A4AE0060848E /* ItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209D22481A4AE0060848E /* ItemTests.swift */; };
+		FBC209D62481A53B0060848E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209D52481A53B0060848E /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +37,9 @@
 		FBC209BC248197240060848E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBC209BE248197240060848E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBC209C3248197240060848E /* GlobalLogicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlobalLogicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBC209C7248197240060848E /* GlobalLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalLogicTests.swift; sourceTree = "<group>"; };
 		FBC209C9248197240060848E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBC209D22481A4AE0060848E /* ItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTests.swift; sourceTree = "<group>"; };
+		FBC209D52481A53B0060848E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		FBC209AF2481971F0060848E /* GlobalLogic */ = {
 			isa = PBXGroup;
 			children = (
+				FBC209D42481A52E0060848E /* Model */,
 				FBC209B02481971F0060848E /* AppDelegate.swift */,
 				FBC209B22481971F0060848E /* SceneDelegate.swift */,
 				FBC209B42481971F0060848E /* ViewController.swift */,
@@ -93,10 +96,18 @@
 		FBC209C6248197240060848E /* GlobalLogicTests */ = {
 			isa = PBXGroup;
 			children = (
-				FBC209C7248197240060848E /* GlobalLogicTests.swift */,
 				FBC209C9248197240060848E /* Info.plist */,
+				FBC209D22481A4AE0060848E /* ItemTests.swift */,
 			);
 			path = GlobalLogicTests;
+			sourceTree = "<group>";
+		};
+		FBC209D42481A52E0060848E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBC209D52481A53B0060848E /* Item.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 					};
 					FBC209C2248197240060848E = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 						TestTargetID = FBC209AC2481971E0060848E;
 					};
 				};
@@ -200,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBC209D62481A53B0060848E /* Item.swift in Sources */,
 				FBC209B52481971F0060848E /* ViewController.swift in Sources */,
 				FBC209B12481971F0060848E /* AppDelegate.swift in Sources */,
 				FBC209B32481971F0060848E /* SceneDelegate.swift in Sources */,
@@ -210,7 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBC209C8248197240060848E /* GlobalLogicTests.swift in Sources */,
+				FBC209D32481A4AE0060848E /* ItemTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +412,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AEWQUX8MPM;
 				INFOPLIST_FILE = GlobalLogicTests/Info.plist;
@@ -410,6 +424,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dansTeam.GlobalLogicTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GlobalLogic.app/GlobalLogic";
@@ -421,6 +436,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AEWQUX8MPM;
 				INFOPLIST_FILE = GlobalLogicTests/Info.plist;

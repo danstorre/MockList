@@ -1,5 +1,5 @@
 //
-//  GlobalLogicTests.swift
+//  ItemTests.swift
 //  GlobalLogicTests
 //
 //  Created by Daniel Torres on 5/29/20.
@@ -9,26 +9,26 @@
 import XCTest
 @testable import GlobalLogic
 
-class GlobalLogicTests: XCTestCase {
+class ItemTests: XCTestCase {
+    var sut: Item!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = Item(title: "My Item", description: "My description")
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testInit_ShouldSetTitleAndSetDescription(){
+        XCTAssertNotNil(sut.title)
+        XCTAssertNotNil(sut.description)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testThumbnail_WhenSettingAvalidUrl_ShouldSetAnUrlThumbnail(){
+        sut.thumbnail = URL(string: "https://www.linkedin.com/in/danstorre/")
+        XCTAssertNotNil(sut.thumbnail)
     }
-
+    
 }
