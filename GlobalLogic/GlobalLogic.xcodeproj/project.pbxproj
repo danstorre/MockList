@@ -15,6 +15,8 @@
 		FBC209BD248197240060848E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC209BB248197240060848E /* LaunchScreen.storyboard */; };
 		FBC209D32481A4AE0060848E /* ItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209D22481A4AE0060848E /* ItemTests.swift */; };
 		FBC209D62481A53B0060848E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209D52481A53B0060848E /* Item.swift */; };
+		FBC209D82481B6AF0060848E /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209D72481B6AF0060848E /* APIClientTests.swift */; };
+		FBC209E02482BBDC0060848E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209DF2482BBDC0060848E /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		FBC209C9248197240060848E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBC209D22481A4AE0060848E /* ItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTests.swift; sourceTree = "<group>"; };
 		FBC209D52481A53B0060848E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		FBC209D72481B6AF0060848E /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		FBC209DF2482BBDC0060848E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 				FBC209B9248197240060848E /* Assets.xcassets */,
 				FBC209BB248197240060848E /* LaunchScreen.storyboard */,
 				FBC209BE248197240060848E /* Info.plist */,
+				FBC209DF2482BBDC0060848E /* APIClient.swift */,
 			);
 			path = GlobalLogic;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 			children = (
 				FBC209C9248197240060848E /* Info.plist */,
 				FBC209D22481A4AE0060848E /* ItemTests.swift */,
+				FBC209D72481B6AF0060848E /* APIClientTests.swift */,
 			);
 			path = GlobalLogicTests;
 			sourceTree = "<group>";
@@ -215,6 +221,7 @@
 				FBC209D62481A53B0060848E /* Item.swift in Sources */,
 				FBC209B52481971F0060848E /* ViewController.swift in Sources */,
 				FBC209B12481971F0060848E /* AppDelegate.swift in Sources */,
+				FBC209E02482BBDC0060848E /* APIClient.swift in Sources */,
 				FBC209B32481971F0060848E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBC209D32481A4AE0060848E /* ItemTests.swift in Sources */,
+				FBC209D82481B6AF0060848E /* APIClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
