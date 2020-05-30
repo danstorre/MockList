@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 protocol DataTaskCreatorProtocol {
     func dataTask(with url: URL,
                   completionHandler:
@@ -18,14 +19,22 @@ extension URLSession: DataTaskCreatorProtocol{}
 
 class APIClient {
     lazy var session: DataTaskCreatorProtocol = URLSession.shared
+    typealias ItemlListHandler = ([Item]?) -> Void
     
-    func getItems(){
+    func getItems(completion: @escaping (ItemlListHandler)){
         guard let url = URL(string: "http://private-f0eea-mobilegllatam.apiary-mock.com/list") else {
             fatalError()
         }
         
-        _ = session.dataTask(with: url) { (data, response, error) in
+        let task = session.dataTask(with: url) { (data, response, error) in
+            
+            let jsonDecoder = JSONDecoder()
+            if let items = try? jsonDecoder.decode([Item].self,
+                                              from: data!) {
+                completion(items)
+            }
             
         }
+        task.resume()
     }
 }
