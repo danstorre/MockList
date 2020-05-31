@@ -17,6 +17,9 @@
 		FBC209D62481A53B0060848E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209D52481A53B0060848E /* Item.swift */; };
 		FBC209D82481B6AF0060848E /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209D72481B6AF0060848E /* APIClientTests.swift */; };
 		FBC209E02482BBDC0060848E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209DF2482BBDC0060848E /* APIClient.swift */; };
+		FBC209E22484457E0060848E /* ListTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209E12484457D0060848E /* ListTableViewControllerTests.swift */; };
+		FBC209E5248446D10060848E /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209E4248446D10060848E /* ListTableViewController.swift */; };
+		FBC209E82484527A0060848E /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209E72484527A0060848E /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		FBC209D52481A53B0060848E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FBC209D72481B6AF0060848E /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		FBC209DF2482BBDC0060848E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		FBC209E12484457D0060848E /* ListTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewControllerTests.swift; sourceTree = "<group>"; };
+		FBC209E4248446D10060848E /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		FBC209E72484527A0060848E /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,8 @@
 		FBC209AF2481971F0060848E /* GlobalLogic */ = {
 			isa = PBXGroup;
 			children = (
+				FBC209E62484525F0060848E /* View */,
+				FBC209E3248446BF0060848E /* ViewController */,
 				FBC209D42481A52E0060848E /* Model */,
 				FBC209B02481971F0060848E /* AppDelegate.swift */,
 				FBC209B22481971F0060848E /* SceneDelegate.swift */,
@@ -104,6 +112,7 @@
 				FBC209C9248197240060848E /* Info.plist */,
 				FBC209D22481A4AE0060848E /* ItemTests.swift */,
 				FBC209D72481B6AF0060848E /* APIClientTests.swift */,
+				FBC209E12484457D0060848E /* ListTableViewControllerTests.swift */,
 			);
 			path = GlobalLogicTests;
 			sourceTree = "<group>";
@@ -114,6 +123,22 @@
 				FBC209D52481A53B0060848E /* Item.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FBC209E3248446BF0060848E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FBC209E4248446D10060848E /* ListTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FBC209E62484525F0060848E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FBC209E72484527A0060848E /* ItemCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +246,8 @@
 				FBC209D62481A53B0060848E /* Item.swift in Sources */,
 				FBC209B52481971F0060848E /* ViewController.swift in Sources */,
 				FBC209B12481971F0060848E /* AppDelegate.swift in Sources */,
+				FBC209E5248446D10060848E /* ListTableViewController.swift in Sources */,
+				FBC209E82484527A0060848E /* ItemCell.swift in Sources */,
 				FBC209E02482BBDC0060848E /* APIClient.swift in Sources */,
 				FBC209B32481971F0060848E /* SceneDelegate.swift in Sources */,
 			);
@@ -232,6 +259,7 @@
 			files = (
 				FBC209D32481A4AE0060848E /* ItemTests.swift in Sources */,
 				FBC209D82481B6AF0060848E /* APIClientTests.swift in Sources */,
+				FBC209E22484457E0060848E /* ListTableViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
