@@ -119,6 +119,17 @@ class ListTableViewControllerTests: XCTestCase {
         XCTAssertEqual(cell.mockImage, imagePlaceHolder)
     }
     
+    func testItemWillDisplayCell_CellPresentsPlaceHolder() {
+        let mockTableView = MockTableView.mockTableViewWithDataSource(sut)
+        let cellToDisplay = MockItemCell()
+        sut.tableView(mockTableView,
+                      willDisplay: cellToDisplay,
+                      forRowAt: IndexPath())
+        
+        let imagePlaceHolder = UIImage(named: "icono")!
+        XCTAssertEqual(cellToDisplay.mockImage, imagePlaceHolder)
+    }
+    
     //check if rows are properly configured
     //fetches image.
     class MockItemListFetcher: ItemListFetcher, ItemLisDataSource {

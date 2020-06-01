@@ -77,6 +77,10 @@ class ListTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        configurePlaceHolderTo(cell as! ItemCell)
+    }
+    
     private func configurePlaceHolderTo(_ cell: ItemCell) {
         cell.configureThumnail(with: self.imagePlaceHolder)
     }

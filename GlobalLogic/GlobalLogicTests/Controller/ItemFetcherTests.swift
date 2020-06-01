@@ -34,10 +34,6 @@ class ItemFetcherTests: XCTestCase {
         XCTAssertNotNil(sut.apiService)
     }
     
-    func testInit_isFetchProtocol(){
-        XCTAssertTrue(sut is ItemListFetcher)
-    }
-    
     func testFetchItems_CallsService() {
         sut.fetchItems()
         XCTAssertTrue(mockService.getItemsGetsCalled)

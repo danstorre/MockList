@@ -91,9 +91,16 @@ class ItemFetcher: ItemListFetcher{
     
     func fetchImage(from url: URL, completion: @escaping ((UIImage?) -> Void)) {
         apiService.fetchData(from: url, completion: {(imageData, error) in
-            DispatchQueue.main.async {
+            guard error == nil else{
+                DispatchQueue.main.async {completion(nil)}
+                return
+            }
             guard let imageData = imageData,
-                let image = UIImage(data: imageData) else { completion(nil); return }
+            let image = UIImage(data: imageData) else {
+                DispatchQueue.main.async {completion(nil)}
+                return
+            }
+            DispatchQueue.main.async {
                 completion(image)
             }
         })
