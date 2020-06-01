@@ -20,6 +20,8 @@
 		FBC209E22484457E0060848E /* ListTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209E12484457D0060848E /* ListTableViewControllerTests.swift */; };
 		FBC209E5248446D10060848E /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209E4248446D10060848E /* ListTableViewController.swift */; };
 		FBC209E82484527A0060848E /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209E72484527A0060848E /* ItemCell.swift */; };
+		FBC209EE2485688E0060848E /* ItemDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209ED2485688D0060848E /* ItemDataSourceTests.swift */; };
+		FBC209F1248578280060848E /* ItemDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209F0248578280060848E /* ItemDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		FBC209E12484457D0060848E /* ListTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewControllerTests.swift; sourceTree = "<group>"; };
 		FBC209E4248446D10060848E /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		FBC209E72484527A0060848E /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		FBC209ED2485688D0060848E /* ItemDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataSourceTests.swift; sourceTree = "<group>"; };
+		FBC209F0248578280060848E /* ItemDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,9 @@
 		FBC209AF2481971F0060848E /* GlobalLogic */ = {
 			isa = PBXGroup;
 			children = (
+				FBC209EF248578100060848E /* Presenter */,
+				FBC209EB248568460060848E /* Network Services */,
+				FBC209EA248568380060848E /* Controller */,
 				FBC209E62484525F0060848E /* View */,
 				FBC209E3248446BF0060848E /* ViewController */,
 				FBC209D42481A52E0060848E /* Model */,
@@ -101,7 +108,6 @@
 				FBC209B9248197240060848E /* Assets.xcassets */,
 				FBC209BB248197240060848E /* LaunchScreen.storyboard */,
 				FBC209BE248197240060848E /* Info.plist */,
-				FBC209DF2482BBDC0060848E /* APIClient.swift */,
 			);
 			path = GlobalLogic;
 			sourceTree = "<group>";
@@ -109,6 +115,7 @@
 		FBC209C6248197240060848E /* GlobalLogicTests */ = {
 			isa = PBXGroup;
 			children = (
+				FBC209EC2485685A0060848E /* Controller */,
 				FBC209C9248197240060848E /* Info.plist */,
 				FBC209D22481A4AE0060848E /* ItemTests.swift */,
 				FBC209D72481B6AF0060848E /* APIClientTests.swift */,
@@ -139,6 +146,37 @@
 				FBC209E72484527A0060848E /* ItemCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FBC209EA248568380060848E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FBC209EB248568460060848E /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+				FBC209DF2482BBDC0060848E /* APIClient.swift */,
+			);
+			path = "Network Services";
+			sourceTree = "<group>";
+		};
+		FBC209EC2485685A0060848E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FBC209ED2485688D0060848E /* ItemDataSourceTests.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FBC209EF248578100060848E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FBC209F0248578280060848E /* ItemDataSource.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBC209D62481A53B0060848E /* Item.swift in Sources */,
+				FBC209F1248578280060848E /* ItemDataSource.swift in Sources */,
 				FBC209B52481971F0060848E /* ViewController.swift in Sources */,
 				FBC209B12481971F0060848E /* AppDelegate.swift in Sources */,
 				FBC209E5248446D10060848E /* ListTableViewController.swift in Sources */,
@@ -258,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBC209D32481A4AE0060848E /* ItemTests.swift in Sources */,
+				FBC209EE2485688E0060848E /* ItemDataSourceTests.swift in Sources */,
 				FBC209D82481B6AF0060848E /* APIClientTests.swift in Sources */,
 				FBC209E22484457E0060848E /* ListTableViewControllerTests.swift in Sources */,
 			);

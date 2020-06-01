@@ -93,7 +93,6 @@ class ListTableViewControllerTests: XCTestCase {
     }
     
     func testItemWithoutThubmnail_CellDoesntPresentImage() {
-        mockListFetcher.arrayOfItems[0].thumbnail = URL(string: "anyurl")
         let mockTableView = MockTableView.mockTableViewWithDataSource(sut)
         mockTableView.reloadData()
         
