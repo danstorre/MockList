@@ -24,6 +24,7 @@ class ListTableViewController: UITableViewController {
     
     var fetcher: ItemListFetcher!
     var dataSource: ItemLisDataSource!
+    private lazy var imagePlaceHolder = UIImage(named: "icono")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,15 +62,22 @@ class ListTableViewController: UITableViewController {
         cell.configuresCellWith(title: title, and: description)
         
         if let thumnailURL = dataSource.getThumnailURL(at: indexPath.row) {
-            fetcher.fetchImage(from: thumnailURL, completion: { (image) in
+            fetcher.fetchImage(from: thumnailURL, completion: {[weak self] (image) in
                 if let image = image {
                     cell.configureThumnail(with: image)
+                } else {
+                    guard let self = self else {return}
+                    self.configurePlaceHolderTo(cell)
                 }
             })
+        } else {
+            configurePlaceHolderTo(cell)
         }
         
         return cell
     }
     
-    
+    private func configurePlaceHolderTo(_ cell: ItemCell) {
+        cell.configureThumnail(with: self.imagePlaceHolder)
+    }
 }

@@ -92,17 +92,31 @@ class ListTableViewControllerTests: XCTestCase {
                        imageExpected, "imageExpected should be present")
     }
     
-    func testItemWithoutThubmnail_CellDoesntPresentImage() {
+    func testItemWithThubmnail_WhenHavingProblemWithService_CellPresentsPlaceHolder() {
+        mockListFetcher.arrayOfItems[0].thumbnail = URL(string: "anyurl")
         let mockTableView = MockTableView.mockTableViewWithDataSource(sut)
         mockTableView.reloadData()
         
+        let imagePlaceHolder = UIImage(named: "icono")!
         let cell = mockTableView.cellForRow(at:
             IndexPath(row: 0, section: 0)) as! MockItemCell
         XCTAssertEqual(cell.mocktitle, "my")
         XCTAssertEqual(cell.mockdescription, "desc")
         
         mockListFetcher.imageCompletion?(nil)
-        XCTAssertNil(cell.mockImage)
+        XCTAssertEqual(cell.mockImage, imagePlaceHolder)
+    }
+    
+    func testItemWithoutThubmnail_CellPresentsPlaceHolder() {
+        let mockTableView = MockTableView.mockTableViewWithDataSource(sut)
+        mockTableView.reloadData()
+        
+        let imagePlaceHolder = UIImage(named: "icono")!
+        let cell = mockTableView.cellForRow(at:
+            IndexPath(row: 0, section: 0)) as! MockItemCell
+        XCTAssertEqual(cell.mocktitle, "my")
+        XCTAssertEqual(cell.mockdescription, "desc")
+        XCTAssertEqual(cell.mockImage, imagePlaceHolder)
     }
     
     //check if rows are properly configured
