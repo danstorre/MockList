@@ -24,6 +24,7 @@
 		FBC209F1248578280060848E /* ItemDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209F0248578280060848E /* ItemDataSource.swift */; };
 		FBC209F5248585740060848E /* ItemFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209F4248585740060848E /* ItemFetcher.swift */; };
 		FBC209F7248585800060848E /* ItemFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209F6248585800060848E /* ItemFetcherTests.swift */; };
+		FBC209F92485B9D50060848E /* DownSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209F82485B9D40060848E /* DownSampler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		FBC209F0248578280060848E /* ItemDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataSource.swift; sourceTree = "<group>"; };
 		FBC209F4248585740060848E /* ItemFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFetcher.swift; sourceTree = "<group>"; };
 		FBC209F6248585800060848E /* ItemFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFetcherTests.swift; sourceTree = "<group>"; };
+		FBC209F82485B9D40060848E /* DownSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownSampler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				FBC209DF2482BBDC0060848E /* APIClient.swift */,
+				FBC209F82485B9D40060848E /* DownSampler.swift */,
 			);
 			path = "Network Services";
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				FBC209F1248578280060848E /* ItemDataSource.swift in Sources */,
 				FBC209B52481971F0060848E /* ViewController.swift in Sources */,
 				FBC209B12481971F0060848E /* AppDelegate.swift in Sources */,
+				FBC209F92485B9D50060848E /* DownSampler.swift in Sources */,
 				FBC209E5248446D10060848E /* ListTableViewController.swift in Sources */,
 				FBC209E82484527A0060848E /* ItemCell.swift in Sources */,
 				FBC209E02482BBDC0060848E /* APIClient.swift in Sources */,
