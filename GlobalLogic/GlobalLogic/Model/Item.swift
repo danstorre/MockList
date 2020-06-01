@@ -42,9 +42,10 @@ struct Item: Decodable{
                                        forKey: .thumbnail)
             else { return }
         
-        
+        let admittedHosts = ["picsum.photos","picsum.photos.ar"]
         if let url = URL(string: urlString),
-            UIApplication.shared.canOpenURL(url) {
+            let componentes = URLComponents(url: url, resolvingAgainstBaseURL: false),
+            componentes.scheme == "https", let host = componentes.host, admittedHosts.contains(host){
             thumbnail = url
         }else {
             throw ItemError.ErrorImageUrlIsNotValid

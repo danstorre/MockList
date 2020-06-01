@@ -35,6 +35,7 @@ class ListTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         tableView.reloadData()
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     // MARK: - Table view data source
