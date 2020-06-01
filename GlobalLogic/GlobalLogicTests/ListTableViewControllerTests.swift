@@ -60,7 +60,7 @@ class ListTableViewControllerTests: XCTestCase {
     
     func testCellForRow_DequeuesCell() {
         let mockTableView = MockTableView.mockTableViewWithDataSource(sut)
-
+        
         mockTableView.reloadData()
         _ = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0))
         XCTAssertTrue(mockTableView.cellGotDequeued)
@@ -75,13 +75,49 @@ class ListTableViewControllerTests: XCTestCase {
         XCTAssertEqual(cell.mockdescription, "desc")
     }
     
+    func testItemWithThubmnail_GetsImageConfiguredOnCell() {
+        mockListFetcher.arrayOfItems[0].thumbnail = URL(string: "anyurl")
+        let mockTableView = MockTableView.mockTableViewWithDataSource(sut)
+        mockTableView.reloadData()
+        
+        let imageExpected = UIImage(named: "icono")!
+        
+        let cell = mockTableView.cellForRow(at:
+            IndexPath(row: 0, section: 0)) as! MockItemCell
+        XCTAssertEqual(cell.mocktitle, "my")
+        XCTAssertEqual(cell.mockdescription, "desc")
+        
+        mockListFetcher.imageCompletion?(UIImage(named: "icono")!)
+        XCTAssertEqual(cell.mockImage,
+                       imageExpected, "imageExpected should be present")
+    }
+    
+    func testItemWithoutThubmnail_CellDoesntPresentImage() {
+        mockListFetcher.arrayOfItems[0].thumbnail = URL(string: "anyurl")
+        let mockTableView = MockTableView.mockTableViewWithDataSource(sut)
+        mockTableView.reloadData()
+        
+        let cell = mockTableView.cellForRow(at:
+            IndexPath(row: 0, section: 0)) as! MockItemCell
+        XCTAssertEqual(cell.mocktitle, "my")
+        XCTAssertEqual(cell.mockdescription, "desc")
+        
+        mockListFetcher.imageCompletion?(nil)
+        XCTAssertNil(cell.mockImage)
+    }
+    
+    //check if rows are properly configured
+    //fetches image.
     class MockItemListFetcher: ItemListFetcher, ItemLisDataSource {
         var fetchGetsCalled = false
         var numberOfRowsGetsCalled = false
         var numberOfRowsInSection = 0
         var getItemAndDescriptionTupleGetsCalled = true
         
+        var imageCompletion: ((UIImage?) -> Void)?
+        
         var arrayOfItems: [Item] = [Item(title: "my", description: "desc")]
+        
         func fetchItems() {
             fetchGetsCalled = true
         }
@@ -98,6 +134,19 @@ class ListTableViewControllerTests: XCTestCase {
             }
             let item = arrayOfItems[index]
             return (item.title, item.description)
+        }
+        
+        func fetchImage(completion: @escaping((UIImage?) -> Void)){
+            imageCompletion = completion
+        }
+        
+        func fetchImage(from: URL, completion: @escaping ((UIImage?) -> Void)) {
+            self.imageCompletion = completion
+        }
+        
+        func getThumnailURL(at index: Int) -> URL? {
+            guard let url = arrayOfItems[0].thumbnail else { return nil}
+            return url
         }
     }
     
@@ -127,10 +176,14 @@ class ListTableViewControllerTests: XCTestCase {
     class MockItemCell : ItemCell {
         var mocktitle: String?
         var mockdescription: String?
+        var mockImage: UIImage?
         
         override func configuresCellWith(title: String, and description: String) {
             self.mocktitle = title
             self.mockdescription = description
+        }
+        override func configureThumnail(with image: UIImage) {
+            self.mockImage = image
         }
     }
 }

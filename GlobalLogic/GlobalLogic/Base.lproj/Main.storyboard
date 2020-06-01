@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16096"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,10 +36,22 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j1S-2q-IcK">
+                                            <rect key="frame" x="299" y="19" width="86" height="41"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="41" id="q26-Ev-cYc"/>
+                                                <constraint firstAttribute="width" constant="86" id="tc7-Ll-VOA"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="j1S-2q-IcK" firstAttribute="top" secondItem="3ZV-2Q-Sog" secondAttribute="top" constant="19" id="tfH-kQ-Nl9"/>
+                                        <constraint firstAttribute="trailing" secondItem="j1S-2q-IcK" secondAttribute="trailing" constant="29" id="wVw-0q-xhw"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="descriptionItem" destination="KeC-si-X99" id="Aop-R2-hSG"/>
+                                    <outlet property="thumnailImageView" destination="j1S-2q-IcK" id="uIK-cf-H3i"/>
                                     <outlet property="titleItem" destination="EwT-CG-r76" id="Dnq-it-vda"/>
                                 </connections>
                             </tableViewCell>

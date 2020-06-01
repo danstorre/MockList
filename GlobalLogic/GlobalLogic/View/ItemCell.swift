@@ -12,6 +12,7 @@ class ItemCell: UITableViewCell {
     
     @IBOutlet var titleItem: UILabel!
     @IBOutlet var descriptionItem: UILabel!
+    @IBOutlet var thumnailImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,5 +22,9 @@ class ItemCell: UITableViewCell {
     func configuresCellWith(title: String, and description: String) {
         titleItem.text = title
         descriptionItem.text = description
+    }
+    
+    func configureThumnail(with image: UIImage){
+        self.thumnailImageView.image = image
     }
 }

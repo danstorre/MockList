@@ -26,6 +26,15 @@ class ItemTests: XCTestCase {
         XCTAssertNotNil(sut.description)
     }
     
+    func testInit2_ShouldSetTitleAndSetDescriptionAndThumnail(){
+        sut = Item(title: "Title",
+                   description: "desc",
+                   thumbnail: URL(fileURLWithPath: "https://www.google.com"))
+        XCTAssertNotNil(sut.title)
+        XCTAssertNotNil(sut.description)
+        XCTAssertNotNil(sut.thumbnail)
+    }
+    
     func testThumbnail_WhenSettingAvalidUrl_ShouldSetAnUrlThumbnail(){
         sut.thumbnail = URL(string: "https://www.linkedin.com/in/danstorre/")
         XCTAssertNotNil(sut.thumbnail)

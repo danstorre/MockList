@@ -22,6 +22,11 @@ struct Item: Decodable{
         case thumbnail = "image"
     }
     
+    init(title: String, description: String, thumbnail: URL) {
+        self.init(title: title, description: description)
+        self.thumbnail = thumbnail
+    }
+    
     init(title: String, description: String) {
         self.title = title
         self.description = description
