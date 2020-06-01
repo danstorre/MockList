@@ -8,36 +8,36 @@
 
 import Foundation
 
-protocol ItemPresentable: class{
+protocol ItemListHolder: class{
     var arrayOfItems: [Item] {get set}
 }
 
 class ItemDataSource: ItemLisDataSource{
     
-    var presentableItem: ItemPresentable
+    var itemListHolder: ItemListHolder
     
-    init(presenting presentableItem: ItemPresentable){
-        self.presentableItem = presentableItem
+    init(presenting itemListHolder: ItemListHolder){
+        self.itemListHolder = itemListHolder
     }
     
     func getThumnailURL(at index: Int) -> URL? {
-        guard !presentableItem.arrayOfItems.isEmpty,
-            presentableItem.arrayOfItems.indices.contains(index) else {
+        guard !itemListHolder.arrayOfItems.isEmpty,
+            itemListHolder.arrayOfItems.indices.contains(index) else {
             return nil
         }
-        return presentableItem.arrayOfItems[index].thumbnail
+        return itemListHolder.arrayOfItems[index].thumbnail
     }
     
     func getNumberOfRows(section: Int) -> Int {
-        return presentableItem.arrayOfItems.count
+        return itemListHolder.arrayOfItems.count
     }
     
     func getItemAndDescriptionTuple(at index: Int) -> (String, String) {
-        guard !presentableItem.arrayOfItems.isEmpty,
-            presentableItem.arrayOfItems.indices.contains(index) else {
+        guard !itemListHolder.arrayOfItems.isEmpty,
+            itemListHolder.arrayOfItems.indices.contains(index) else {
             return ("","")
         }
-        let item = presentableItem.arrayOfItems[index]
+        let item = itemListHolder.arrayOfItems[index]
         return (item.title, item.description)
     }
 }

@@ -22,6 +22,8 @@
 		FBC209E82484527A0060848E /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209E72484527A0060848E /* ItemCell.swift */; };
 		FBC209EE2485688E0060848E /* ItemDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209ED2485688D0060848E /* ItemDataSourceTests.swift */; };
 		FBC209F1248578280060848E /* ItemDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209F0248578280060848E /* ItemDataSource.swift */; };
+		FBC209F5248585740060848E /* ItemFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209F4248585740060848E /* ItemFetcher.swift */; };
+		FBC209F7248585800060848E /* ItemFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209F6248585800060848E /* ItemFetcherTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		FBC209E72484527A0060848E /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		FBC209ED2485688D0060848E /* ItemDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataSourceTests.swift; sourceTree = "<group>"; };
 		FBC209F0248578280060848E /* ItemDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataSource.swift; sourceTree = "<group>"; };
+		FBC209F4248585740060848E /* ItemFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFetcher.swift; sourceTree = "<group>"; };
+		FBC209F6248585800060848E /* ItemFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFetcherTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 		FBC209EA248568380060848E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FBC209F4248585740060848E /* ItemFetcher.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				FBC209ED2485688D0060848E /* ItemDataSourceTests.swift */,
+				FBC209F6248585800060848E /* ItemFetcherTests.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 				FBC209E5248446D10060848E /* ListTableViewController.swift in Sources */,
 				FBC209E82484527A0060848E /* ItemCell.swift in Sources */,
 				FBC209E02482BBDC0060848E /* APIClient.swift in Sources */,
+				FBC209F5248585740060848E /* ItemFetcher.swift in Sources */,
 				FBC209B32481971F0060848E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBC209F7248585800060848E /* ItemFetcherTests.swift in Sources */,
 				FBC209D32481A4AE0060848E /* ItemTests.swift in Sources */,
 				FBC209EE2485688E0060848E /* ItemDataSourceTests.swift in Sources */,
 				FBC209D82481B6AF0060848E /* APIClientTests.swift in Sources */,

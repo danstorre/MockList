@@ -14,8 +14,9 @@ class ItemDataSourceTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        let presentableItem = MockPresentableItem()
-        sut = ItemDataSource(presenting: presentableItem)
+        try super.setUpWithError()
+        let itemListHolder = MockitemListHolder()
+        sut = ItemDataSource(presenting: itemListHolder)
     }
 
     override func tearDownWithError() throws {
@@ -23,7 +24,7 @@ class ItemDataSourceTests: XCTestCase {
     }
     
     func testInit_shouldSetAnItemPresentable(){
-        XCTAssertNotNil(sut.presentableItem)
+        XCTAssertNotNil(sut.itemListHolder)
     }
     
     func testGetThumnailURL_WhenItemPresentableHasThumnailURL_shouldReturnURL(){
@@ -31,12 +32,12 @@ class ItemDataSourceTests: XCTestCase {
     }
     
     func testGetThumnailURL_WhenItemPresentableHasnoThumnailURL_shouldReturnNil(){
-        sut.presentableItem.arrayOfItems[0].thumbnail = nil
+        sut.itemListHolder.arrayOfItems[0].thumbnail = nil
         XCTAssertNil(sut.getThumnailURL(at: 0))
     }
     
     func testGetThumnailURL_WhenItemPresentableHasNoItems_ShouldReturnNil(){
-        sut.presentableItem.arrayOfItems = [Item]()
+        sut.itemListHolder.arrayOfItems = [Item]()
         XCTAssertNil(sut.getThumnailURL(at: 0))
     }
     
@@ -45,7 +46,7 @@ class ItemDataSourceTests: XCTestCase {
     }
     
     func testGetNumberOfRows_WhenItemPresentableHasNoItems_ShouldReturnZero(){
-        sut.presentableItem.arrayOfItems = [Item]()
+        sut.itemListHolder.arrayOfItems = [Item]()
         XCTAssertEqual(sut.getNumberOfRows(section: 0), 0)
     }
     
@@ -59,7 +60,7 @@ class ItemDataSourceTests: XCTestCase {
     }
     
     func testgetItemAndDescriptionTuple_WhenItemPresentableHasNoItems_ShouldReturnEmptyStrings(){
-        sut.presentableItem.arrayOfItems = [Item]()
+        sut.itemListHolder.arrayOfItems = [Item]()
         XCTAssertEqual(sut.getItemAndDescriptionTuple(at: 0).0, "")
         XCTAssertEqual(sut.getItemAndDescriptionTuple(at: 0).1, "")
     }
@@ -69,7 +70,7 @@ class ItemDataSourceTests: XCTestCase {
         XCTAssertEqual(sut.getItemAndDescriptionTuple(at: 1).1, "")
     }
     
-    class MockPresentableItem: ItemPresentable {
+    class MockitemListHolder: ItemListHolder {
         var arrayOfItems: [Item] = [Item(title: "a",
                                          description: "a",
                                          thumbnail: URL(string: "abc")!)]

@@ -22,9 +22,8 @@ protocol DataTaskCreatorProtocol {
 
 extension URLSession: DataTaskCreatorProtocol{}
 
-class APIClient {
+class APIClient: APIProtocol {
     lazy var session: DataTaskCreatorProtocol = URLSession.shared
-    typealias ItemlListHandler = ([Item]?, Error?) -> Void
     
     func getItems(completion: @escaping (ItemlListHandler)){
         guard let url = URL(string: "http://private-f0eea-mobilegllatam.apiary-mock.com/list") else {
