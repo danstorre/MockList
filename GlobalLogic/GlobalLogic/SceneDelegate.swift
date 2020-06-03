@@ -32,6 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         listvc.dataSource = ItemDataSource(presenting: itemManager!)
         let apiService = APIClient<Item>()
+        apiService.parser = JsonParser()
         let fetcher = ItemFetcher(itemListHolder: itemManager!, apiService: apiService)
         listvc.fetcher = fetcher
         fetcher.delegate = listvc
