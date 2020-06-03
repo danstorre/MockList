@@ -25,9 +25,9 @@ class ItemNavigationControllerTests: XCTestCase {
         // objectWithItems delegates configuration and presentation to its router passing in the item selected
         XCTAssertEqual((objectWithItems.router as! MockRouterProtocol).presentGetsCalled, true)
         XCTAssertNotNil(objectWithItems.router.selectedItem)
-        XCTAssertNotNil(objectWithItems.router.selectedItem!.title, itemExpectedToSelect.title)
+        XCTAssertEqual(objectWithItems.router.selectedItem!.title, itemExpectedToSelect.title)
         XCTAssertNil(objectWithItems.router.selectedItem!.thumbnail)
-        XCTAssertNotNil(objectWithItems.router.selectedItem!.description, itemExpectedToSelect.description)
+        XCTAssertEqual(objectWithItems.router.selectedItem!.description, itemExpectedToSelect.description)
     }
     
     func givenAnObjectWithAListOfItems(_ items:[ItemProtocol]) -> ItemSelectableNavigatable {
