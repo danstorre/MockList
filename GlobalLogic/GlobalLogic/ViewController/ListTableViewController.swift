@@ -24,6 +24,8 @@ class ListTableViewController: UITableViewController {
     
     var fetcher: ItemListFetcher!
     var dataSource: ItemLisDataSource!
+    var routerController: Selectable?
+    
     private lazy var imagePlaceHolder = UIImage(named: "icono")!
     
     override func viewDidLoad() {
@@ -79,6 +81,12 @@ class ListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         configurePlaceHolderTo(cell as! ItemCell)
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        routerController?.selectsItem(at: indexPath.row)
     }
     
     private func configurePlaceHolderTo(_ cell: ItemCell) {
