@@ -29,7 +29,7 @@ class DetailItemRouter: DetailItemVcPresenter{
         }
         vcDetail.selectedItem = selectedItem
         
-        navigationController?.pushViewController(vcDetail, animated: false)
+        navigationController?.pushViewController(vcDetail, animated: true)
     }
 }
 

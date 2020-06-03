@@ -82,26 +82,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riI-ia-ZSe">
-                                <rect key="frame" x="148" y="177" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZe-00-Wpe">
-                                <rect key="frame" x="148" y="206" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vz2-94-ip6">
-                                <rect key="frame" x="71" y="41" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MjH-4P-4el">
+                                <rect key="frame" x="41.5" y="177" width="331" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riI-ia-ZSe">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZe-00-Wpe">
+                                        <rect key="frame" x="0.0" y="28.5" width="331" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icono" translatesAutoresizingMaskIntoConstraints="NO" id="vz2-94-ip6">
+                                <rect key="frame" x="87" y="41" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="S12-53-7jx"/>
+                                    <constraint firstAttribute="height" constant="128" id="xmf-mj-MDn"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KlL-Sg-m7m" firstAttribute="top" secondItem="vz2-94-ip6" secondAttribute="top" constant="3" id="1oL-a4-glL"/>
+                            <constraint firstItem="MjH-4P-4el" firstAttribute="width" secondItem="b8X-yc-7Lw" secondAttribute="width" multiplier="0.8" id="QK6-A4-1by"/>
+                            <constraint firstItem="vz2-94-ip6" firstAttribute="centerX" secondItem="KlL-Sg-m7m" secondAttribute="centerX" id="U0A-Xq-IAI"/>
+                            <constraint firstItem="MjH-4P-4el" firstAttribute="top" secondItem="vz2-94-ip6" secondAttribute="bottom" constant="8" id="eJh-0n-COu"/>
+                            <constraint firstItem="MjH-4P-4el" firstAttribute="centerX" secondItem="KlL-Sg-m7m" secondAttribute="centerX" id="w71-82-C7b"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KlL-Sg-m7m"/>
                     </view>
                     <connections>
@@ -115,4 +128,7 @@
             <point key="canvasLocation" x="1313" y="17"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icono" width="1024" height="1024"/>
+    </resources>
 </document>
