@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		FBA083AF2487FC450032788B /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083AE2487FC450032788B /* ItemManager.swift */; };
 		FBA083B124881BE60032788B /* ItemNavigationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083B024881BE60032788B /* ItemNavigationControllerTests.swift */; };
-		FBA083B324881D5B0032788B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083B224881D5B0032788B /* Router.swift */; };
+		FBA083B324881D5B0032788B /* ItemNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083B224881D5B0032788B /* ItemNavigationController.swift */; };
+		FBA083B624883F560032788B /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083B524883F560032788B /* RouterTests.swift */; };
+		FBA083B9248843640032788B /* DetailItemRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083B8248843640032788B /* DetailItemRouter.swift */; };
+		FBA083BB248849520032788B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083BA248849520032788B /* DetailViewController.swift */; };
 		FBC209B12481971F0060848E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209B02481971F0060848E /* AppDelegate.swift */; };
 		FBC209B32481971F0060848E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209B22481971F0060848E /* SceneDelegate.swift */; };
 		FBC209B52481971F0060848E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209B42481971F0060848E /* ViewController.swift */; };
@@ -43,7 +46,10 @@
 /* Begin PBXFileReference section */
 		FBA083AE2487FC450032788B /* ItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
 		FBA083B024881BE60032788B /* ItemNavigationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNavigationControllerTests.swift; sourceTree = "<group>"; };
-		FBA083B224881D5B0032788B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		FBA083B224881D5B0032788B /* ItemNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNavigationController.swift; sourceTree = "<group>"; };
+		FBA083B524883F560032788B /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
+		FBA083B8248843640032788B /* DetailItemRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemRouter.swift; sourceTree = "<group>"; };
+		FBA083BA248849520032788B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FBC209AD2481971F0060848E /* GlobalLogic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlobalLogic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC209B02481971F0060848E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBC209B22481971F0060848E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +92,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FBA083B424883F470032788B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FBA083B524883F560032788B /* RouterTests.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FBA083B7248843540032788B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FBA083B8248843640032788B /* DetailItemRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		FBC209A42481971E0060848E = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +129,7 @@
 		FBC209AF2481971F0060848E /* GlobalLogic */ = {
 			isa = PBXGroup;
 			children = (
+				FBA083B7248843540032788B /* Router */,
 				FBC209EF248578100060848E /* Presenter */,
 				FBC209EB248568460060848E /* Network Services */,
 				FBC209EA248568380060848E /* Controller */,
@@ -127,6 +150,7 @@
 		FBC209C6248197240060848E /* GlobalLogicTests */ = {
 			isa = PBXGroup;
 			children = (
+				FBA083B424883F470032788B /* Router */,
 				FBC209EC2485685A0060848E /* Controller */,
 				FBC209C9248197240060848E /* Info.plist */,
 				FBC209D22481A4AE0060848E /* ItemTests.swift */,
@@ -149,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				FBC209E4248446D10060848E /* ListTableViewController.swift */,
+				FBA083BA248849520032788B /* DetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -165,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				FBC209F4248585740060848E /* ItemFetcher.swift */,
-				FBA083B224881D5B0032788B /* Router.swift */,
+				FBA083B224881D5B0032788B /* ItemNavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -303,14 +328,16 @@
 				FBC209F1248578280060848E /* ItemDataSource.swift in Sources */,
 				FBC209B52481971F0060848E /* ViewController.swift in Sources */,
 				FBC209B12481971F0060848E /* AppDelegate.swift in Sources */,
-				FBA083B324881D5B0032788B /* Router.swift in Sources */,
+				FBA083B324881D5B0032788B /* ItemNavigationController.swift in Sources */,
 				FBC209F92485B9D50060848E /* DownSampler.swift in Sources */,
+				FBA083B9248843640032788B /* DetailItemRouter.swift in Sources */,
 				FBC209E5248446D10060848E /* ListTableViewController.swift in Sources */,
 				FBC209E82484527A0060848E /* ItemCell.swift in Sources */,
 				FBC209E02482BBDC0060848E /* APIClient.swift in Sources */,
 				FBC209F5248585740060848E /* ItemFetcher.swift in Sources */,
 				FBA083AF2487FC450032788B /* ItemManager.swift in Sources */,
 				FBC209B32481971F0060848E /* SceneDelegate.swift in Sources */,
+				FBA083BB248849520032788B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +350,7 @@
 				FBC209EE2485688E0060848E /* ItemDataSourceTests.swift in Sources */,
 				FBC209D82481B6AF0060848E /* APIClientTests.swift in Sources */,
 				FBA083B124881BE60032788B /* ItemNavigationControllerTests.swift in Sources */,
+				FBA083B624883F560032788B /* RouterTests.swift in Sources */,
 				FBC209E22484457E0060848E /* ListTableViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

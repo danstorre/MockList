@@ -6,7 +6,7 @@
 //  Copyright © 2020 dansTeam. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol Selectable {
     func selectsItem(at: Int)
@@ -23,16 +23,11 @@ protocol RouterProtocol {
     func present()
 }
 
-protocol RouterDetailItemProtocol: RouterProtocol{
+protocol HasSelectedItemProtocol {
     var selectedItem: ItemProtocol? {get set}
 }
 
-struct Router: RouterProtocol{
-    func present() {
-        
-    }
-}
-
+typealias RouterDetailItemProtocol = RouterProtocol & HasSelectedItemProtocol
 typealias ItemSelectable = Selectable & HasItemListHolder
 typealias ItemSelectableNavigatable = ItemSelectable & HasRouter
 
