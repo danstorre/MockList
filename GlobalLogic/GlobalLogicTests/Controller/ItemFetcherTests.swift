@@ -42,7 +42,7 @@ class ItemFetcherTests: XCTestCase {
     func testFetchItems_whenThereIsNoError_updatesItemListHolder(){
         sut.fetchItems()
         mockItemListHolder.expectation = expectation(description: "listExpectation")
-        let newItems = [Item(title: "b", description: "bdesc")]
+        let newItems = [MockItem(title: "b", description: "bdesc")]
         mockService.completion?(newItems, nil)
         wait(for: [mockItemListHolder.expectation!], timeout: 0.2)
         XCTAssertEqual(sut.itemListHolder.arrayOfItems[0].title, "b")
@@ -62,7 +62,7 @@ class ItemFetcherTests: XCTestCase {
         sut.fetchItems()
         sut.delegate = mockDelegate
         mockDelegate.expectation = expectation(description: "man")
-        mockService.completion?([Item](), nil)
+        mockService.completion?([MockItem](), nil)
         wait(for: [mockDelegate.expectation!], timeout: 0.2)
         XCTAssertEqual(mockDelegate.error as! ItemFetcherError,
                        ItemFetcherError.EmptyItemsFromService)
@@ -72,7 +72,7 @@ class ItemFetcherTests: XCTestCase {
         sut.fetchItems()
         sut.delegate = mockDelegate
         mockDelegate.expectation = expectation(description: "man")
-        mockService.completion?([Item(title: "a", description: "a")], nil)
+        mockService.completion?([MockItem(title: "a", description: "a")], nil)
         wait(for: [mockDelegate.expectation!], timeout: 0.2)
         XCTAssertTrue(mockDelegate.finished)
     }
@@ -105,7 +105,7 @@ class ItemFetcherTests: XCTestCase {
     
     class MockItemListHolder: ItemListHolder{
         var expectation: XCTestExpectation?
-        var arrayOfItems: [ItemProtocol] = [Item(title: "a", description: "a")] {
+        var arrayOfItems: [ItemProtocol] = [MockItem(title: "a", description: "a")] {
             didSet {
                 expectation?.fulfill()
             }
@@ -144,5 +144,34 @@ class ItemFetcherTests: XCTestCase {
     
     enum MockError: Error {
         case someError
+    }
+    
+    class MockItem: ItemProtocol{
+        var title: String = ""
+        var description: String = ""
+        var thumbnail: URL?
+        
+        var callsDecoder = false
+        
+        enum CodingKeys: String, CodingKey {
+            case title
+            case description
+            case thumbnail = "image"
+        }
+        
+        init(title: String, description: String) {
+            self.title = title
+            self.description = description
+        }
+        
+        init(title: String, description: String, thumbnail: URL) {
+            self.title = title
+            self.description = description
+            self.thumbnail = thumbnail
+        }
+        
+        required init(from decoder: Decoder) throws {
+            callsDecoder = true
+        }
     }
 }

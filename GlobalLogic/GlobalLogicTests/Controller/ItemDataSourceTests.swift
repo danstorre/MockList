@@ -37,7 +37,7 @@ class ItemDataSourceTests: XCTestCase {
     }
     
     func testGetThumnailURL_WhenItemPresentableHasNoItems_ShouldReturnNil(){
-        sut.itemListHolder.arrayOfItems = [Item]()
+        sut.itemListHolder.arrayOfItems = [MockItem]()
         XCTAssertNil(sut.getThumnailURL(at: 0))
     }
     
@@ -46,7 +46,7 @@ class ItemDataSourceTests: XCTestCase {
     }
     
     func testGetNumberOfRows_WhenItemPresentableHasNoItems_ShouldReturnZero(){
-        sut.itemListHolder.arrayOfItems = [Item]()
+        sut.itemListHolder.arrayOfItems = [MockItem]()
         XCTAssertEqual(sut.getNumberOfRows(section: 0), 0)
     }
     
@@ -60,7 +60,7 @@ class ItemDataSourceTests: XCTestCase {
     }
     
     func testgetItemAndDescriptionTuple_WhenItemPresentableHasNoItems_ShouldReturnEmptyStrings(){
-        sut.itemListHolder.arrayOfItems = [Item]()
+        sut.itemListHolder.arrayOfItems = [MockItem]()
         XCTAssertEqual(sut.getItemAndDescriptionTuple(at: 0).0, "")
         XCTAssertEqual(sut.getItemAndDescriptionTuple(at: 0).1, "")
     }
@@ -71,8 +71,38 @@ class ItemDataSourceTests: XCTestCase {
     }
     
     class MockitemListHolder: ItemListHolder {
-        var arrayOfItems: [ItemProtocol] = [Item(title: "a",
+        var arrayOfItems: [ItemProtocol] = [MockItem(title: "a",
                                          description: "a",
                                          thumbnail: URL(string: "abc")!)]
+    }
+    
+    
+    class MockItem: ItemProtocol{
+        var title: String = ""
+        var description: String = ""
+        var thumbnail: URL?
+        
+        var callsDecoder = false
+        
+        enum CodingKeys: String, CodingKey {
+            case title
+            case description
+            case thumbnail = "image"
+        }
+        
+        init(title: String, description: String) {
+            self.title = title
+            self.description = description
+        }
+        
+        init(title: String, description: String, thumbnail: URL) {
+            self.title = title
+            self.description = description
+            self.thumbnail = thumbnail
+        }
+        
+        required init(from decoder: Decoder) throws {
+            callsDecoder = true
+        }
     }
 }

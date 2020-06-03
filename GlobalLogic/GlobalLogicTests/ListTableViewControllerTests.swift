@@ -139,8 +139,8 @@ class ListTableViewControllerTests: XCTestCase {
         var getItemAndDescriptionTupleGetsCalled = true
         
         var imageCompletion: ((UIImage?) -> Void)?
-        
-        var arrayOfItems: [Item] = [Item(title: "my", description: "desc")]
+    
+        var arrayOfItems: [MockItem] = [MockItem(title: "my", description: "desc")]
         
         func fetchItems() {
             fetchGetsCalled = true
@@ -208,6 +208,29 @@ class ListTableViewControllerTests: XCTestCase {
         }
         override func configureThumnail(with image: UIImage) {
             self.mockImage = image
+        }
+    }
+    
+    class MockItem: ItemProtocol{
+        var title: String = ""
+        var description: String = ""
+        var thumbnail: URL?
+        
+        var callsDecoder = false
+        
+        enum CodingKeys: String, CodingKey {
+            case title
+            case description
+            case thumbnail = "image"
+        }
+        
+        init(title: String, description: String) {
+            self.title = title
+            self.description = description
+        }
+        
+        required init(from decoder: Decoder) throws {
+            callsDecoder = true
         }
     }
 }
