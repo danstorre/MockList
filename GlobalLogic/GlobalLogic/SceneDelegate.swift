@@ -8,13 +8,6 @@
 
 import UIKit
 
-class ItemManager<T: ItemProtocol>: ItemListHolder{
-    var arrayOfItems: [ItemProtocol]
-    init(_ array: [T]) {
-        self.arrayOfItems = array
-    }
-}
-
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
