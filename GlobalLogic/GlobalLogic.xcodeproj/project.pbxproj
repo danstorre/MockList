@@ -13,6 +13,7 @@
 		FBA083B624883F560032788B /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083B524883F560032788B /* RouterTests.swift */; };
 		FBA083B9248843640032788B /* DetailItemRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083B8248843640032788B /* DetailItemRouter.swift */; };
 		FBA083BB248849520032788B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083BA248849520032788B /* DetailViewController.swift */; };
+		FBA083BE248851A80032788B /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083BD248851A80032788B /* DetailViewControllerTests.swift */; };
 		FBC209B12481971F0060848E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209B02481971F0060848E /* AppDelegate.swift */; };
 		FBC209B32481971F0060848E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209B22481971F0060848E /* SceneDelegate.swift */; };
 		FBC209B52481971F0060848E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209B42481971F0060848E /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 		FBA083B524883F560032788B /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
 		FBA083B8248843640032788B /* DetailItemRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemRouter.swift; sourceTree = "<group>"; };
 		FBA083BA248849520032788B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FBA083BD248851A80032788B /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
 		FBC209AD2481971F0060848E /* GlobalLogic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlobalLogic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC209B02481971F0060848E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBC209B22481971F0060848E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,14 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		FBA083BC248851810032788B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FBA083BD248851A80032788B /* DetailViewControllerTests.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		FBC209A42481971E0060848E = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,7 @@
 		FBC209C6248197240060848E /* GlobalLogicTests */ = {
 			isa = PBXGroup;
 			children = (
+				FBA083BC248851810032788B /* ViewController */,
 				FBA083B424883F470032788B /* Router */,
 				FBC209EC2485685A0060848E /* Controller */,
 				FBC209C9248197240060848E /* Info.plist */,
@@ -352,6 +363,7 @@
 				FBA083B124881BE60032788B /* ItemNavigationControllerTests.swift in Sources */,
 				FBA083B624883F560032788B /* RouterTests.swift in Sources */,
 				FBC209E22484457E0060848E /* ListTableViewControllerTests.swift in Sources */,
+				FBA083BE248851A80032788B /* DetailViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

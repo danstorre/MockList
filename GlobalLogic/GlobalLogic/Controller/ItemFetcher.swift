@@ -12,14 +12,17 @@ enum APIProtocolError: Error {
     case FetchedImageNotFound
 }
 
-protocol APIProtocol {
+protocol APIProtocol: URLFetcher {
     typealias ItemlListHandler = ([ItemProtocol]?, Error?) -> Void
-    typealias DataHandler = (Data?, Error?) -> Void
     func getItems(completion: @escaping (ItemlListHandler))
+}
+
+protocol URLFetcher {
+    typealias DataHandler = (Data?, Error?) -> Void
     func fetchData(from: URL, completion: @escaping(DataHandler))
 }
 
-extension APIProtocol {
+extension URLFetcher {
     func fetchData(from url: URL, completion: @escaping((Data?,Error?)->Void)){
         DispatchQueue.global().async {
             guard let downsampleImage = DownSamplerMethods.downsample(imageAt: url),
