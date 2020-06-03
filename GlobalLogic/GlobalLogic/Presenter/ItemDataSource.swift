@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ItemListHolder: class{
-    var arrayOfItems: [Item] {get set}
+    var arrayOfItems: [ItemProtocol] {get set}
 }
 
 class ItemDataSource: ItemLisDataSource{

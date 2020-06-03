@@ -13,7 +13,7 @@ enum APIProtocolError: Error {
 }
 
 protocol APIProtocol {
-    typealias ItemlListHandler = ([Item]?, Error?) -> Void
+    typealias ItemlListHandler = ([ItemProtocol]?, Error?) -> Void
     typealias DataHandler = (Data?, Error?) -> Void
     func getItems(completion: @escaping (ItemlListHandler))
     func fetchData(from: URL, completion: @escaping(DataHandler))

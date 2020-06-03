@@ -71,7 +71,7 @@ class ItemDataSourceTests: XCTestCase {
     }
     
     class MockitemListHolder: ItemListHolder {
-        var arrayOfItems: [Item] = [Item(title: "a",
+        var arrayOfItems: [ItemProtocol] = [Item(title: "a",
                                          description: "a",
                                          thumbnail: URL(string: "abc")!)]
     }

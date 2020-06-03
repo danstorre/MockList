@@ -22,15 +22,31 @@ protocol DataTaskCreatorProtocol {
 
 extension URLSession: DataTaskCreatorProtocol{}
 
-class APIClient: APIProtocol {
+protocol ParserProtocol {
+    associatedtype T: Decodable
+    func decode(data: Data) throws -> T
+}
+
+class JsonParser<DecodableType: Decodable>: ParserProtocol{
+    typealias T = DecodableType
+    
+    func decode(data: Data) throws -> T {
+        let jsonDecoder = JSONDecoder()
+        let items = try jsonDecoder.decode(T.self, from: data)
+        return items
+    }
+}
+
+class APIClient<T: ItemProtocol>: APIProtocol {
     lazy var session: DataTaskCreatorProtocol = URLSession.shared
+    var parser: JsonParser<[T]>?
     
     func getItems(completion: @escaping (ItemlListHandler)){
         guard let url = URL(string: "http://private-f0eea-mobilegllatam.apiary-mock.com/list") else {
             fatalError()
         }
         
-        let task = session.dataTask(with: url) { (data, response, error) in
+        let task = session.dataTask(with: url) {[weak self] (data, response, error) in
             
             guard error == nil else {
                 completion(nil, WebserviceError.ResponseError)
@@ -42,10 +58,8 @@ class APIClient: APIProtocol {
                 return
             }
             
-            let jsonDecoder = JSONDecoder()
             do {
-                let items = try jsonDecoder
-                    .decode([Item].self, from: data)
+                let items = try self?.parser?.decode(data: data)
                 completion(items, nil)
             }catch ItemError.ErrorImageUrlIsNotValid{
                 completion(nil, WebserviceError.InvalidImageURLError)

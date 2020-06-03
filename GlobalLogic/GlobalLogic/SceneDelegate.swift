@@ -9,7 +9,7 @@
 import UIKit
 
 class ItemManager: ItemListHolder{
-    var arrayOfItems: [Item]
+    var arrayOfItems: [ItemProtocol]
     init(_ array: [Item]) {
         self.arrayOfItems = array
     }
@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let listvc = storyboard.instantiateViewController(withIdentifier: "ListTableViewController") as! ListTableViewController
         
         listvc.dataSource = ItemDataSource(presenting: itemManager!)
-        let apiService = APIClient()
+        let apiService = APIClient<Item>()
         let fetcher = ItemFetcher(itemListHolder: itemManager!, apiService: apiService)
         listvc.fetcher = fetcher
         fetcher.delegate = listvc

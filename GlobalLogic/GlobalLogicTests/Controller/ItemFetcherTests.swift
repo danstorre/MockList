@@ -105,7 +105,7 @@ class ItemFetcherTests: XCTestCase {
     
     class MockItemListHolder: ItemListHolder{
         var expectation: XCTestExpectation?
-        var arrayOfItems: [Item] = [Item(title: "a", description: "a")] {
+        var arrayOfItems: [ItemProtocol] = [Item(title: "a", description: "a")] {
             didSet {
                 expectation?.fulfill()
             }

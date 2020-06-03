@@ -10,7 +10,7 @@ import XCTest
 @testable import GlobalLogic
 
 class APIClientTests: XCTestCase {
-    var sut: APIClient!
+    var sut: APIClient<MockItem>!
     var mocksession: MockSession!
 
     override func setUpWithError() throws {
@@ -52,19 +52,17 @@ class APIClientTests: XCTestCase {
     }
     
     func testGetItems_WhenReturnedDataIsValid_CompletionHandlerShouldReturnArrayOfItems(){
-        var items: [Item]?
-        let completionHandlerAfterDataIsReturned: APIClient.ItemlListHandler = { (itemsFromBackend: [Item]?, _) in
-            items = itemsFromBackend
+        var items: [MockItem]?
+        let completionHandlerAfterDataIsReturned: APIClient.ItemlListHandler = { (itemsFromBackend: [ItemProtocol]?, _) in
+            items = itemsFromBackend as? [APIClientTests.MockItem]
         }
         sut.getItems(completion: completionHandlerAfterDataIsReturned)
         
-        let data = [["title": "Item 1",
-        "description": "Lorem ",
-        "image": "https://picsum.photos/100/100?image=0"]]
-        let responseData = try! JSONSerialization.data(withJSONObject: data,
-                                                    options: [])
+        let mockParser = MockParser()
+        sut.parser = mockParser
+        
         //insert Data from Items.
-        mocksession.completionHandler?(responseData, nil, nil)
+        mocksession.completionHandler?(Data(), nil, nil)
 
         XCTAssertNotNil(items)
         XCTAssertEqual(items!.isEmpty, false)
@@ -72,10 +70,13 @@ class APIClientTests: XCTestCase {
     
     func testGetItems_ThrowsADataInvalidError(){
         var theError: Error?
-        let completionHandlerAfterDataIsReturned: APIClient.ItemlListHandler = { (_: [Item]?, error: Error?) in
+        let completionHandlerAfterDataIsReturned: APIClient.ItemlListHandler = { (_: [ItemProtocol]?, error: Error?) in
             theError = error
         }
         sut.getItems(completion: completionHandlerAfterDataIsReturned)
+        let mockparser = MockParser()
+        mockparser.throwsError = WebserviceError.DataEmptyError
+        sut.parser = mockparser
         
         let responseData = Data()
         //insert Data from Items.
@@ -86,36 +87,36 @@ class APIClientTests: XCTestCase {
     
     func testGetItems_ThrowsAnInvalidImageURLError(){
         var theError: Error?
-        let completionHandlerAfterDataIsReturned: APIClient.ItemlListHandler = { (_: [Item]?, error: Error?) in
+        let completionHandlerAfterDataIsReturned: APIClient.ItemlListHandler = { (_: [ItemProtocol]?, error: Error?) in
             theError = error
         }
         sut.getItems(completion: completionHandlerAfterDataIsReturned)
+        let mockparser = MockParser()
+        mockparser.throwsError = WebserviceError.InvalidImageURLError
+        sut.parser = mockparser
         
-        let data = [["title": "Item 1",
-        "description": "Lorem ",
-        "image": "http23icsum.photos/100/10000mage=0"]]
-        let responseData = try! JSONSerialization.data(withJSONObject: data,
-                                                    options: [])
         //insert Data from Items.
-        mocksession.completionHandler?(responseData, nil, nil)
+        mocksession.completionHandler?(Data(), nil, nil)
 
         XCTAssertEqual(theError as! WebserviceError, WebserviceError.InvalidImageURLError)
     }
     
     func testGetItems_WhenDataHasNoImage_ReturnsItemsWithoutImage(){
-        var items: [Item]?
-        let completionHandlerAfterDataIsReturned: APIClient.ItemlListHandler = { (itemsFromBackend: [Item]?, _) in
-            items = itemsFromBackend
+        var items: [MockItem]?
+        let completionHandlerAfterDataIsReturned: APIClient.ItemlListHandler = { (itemsFromBackend: [ItemProtocol]?, _) in
+            items = itemsFromBackend as? [APIClientTests.MockItem]
         }
         sut.getItems(completion: completionHandlerAfterDataIsReturned)
+        let mockParser = MockParser()
+        let itemExpected = MockItem()
+        itemExpected.title = "Item 2"
+        itemExpected.description = "Lorem 2"
+        itemExpected.thumbnail = nil
+        mockParser.itemsToReturn = [MockItem(),itemExpected]
+        sut.parser = mockParser
         
-        let data = [["title": "Item 1",
-        "description": "Lorem "], ["title": "Item 2",
-        "description": "Lorem 2"]]
-        let responseData = try! JSONSerialization.data(withJSONObject: data,
-                                                    options: [])
         //insert Data from Items.
-        mocksession.completionHandler?(responseData, nil, nil)
+        mocksession.completionHandler?(Data(), nil, nil)
 
         XCTAssertNotNil(items)
         XCTAssertEqual(items!.isEmpty, false)
@@ -126,7 +127,7 @@ class APIClientTests: XCTestCase {
     
     func testGetItems_ThrowsADataEmptyError(){
         var theError: Error?
-        let completionHandlerAfterDataIsReturned: APIClient.ItemlListHandler = { (_: [Item]?, error: Error?) in
+        let completionHandlerAfterDataIsReturned: APIClient.ItemlListHandler = { (_: [ItemProtocol]?, error: Error?) in
             theError = error
         }
         sut.getItems(completion: completionHandlerAfterDataIsReturned)
@@ -138,7 +139,7 @@ class APIClientTests: XCTestCase {
     
     func testGetItems_WhenResponseHasError_ThrowsAnError(){
         var theError: Error?
-        let completionHandlerAfterDataIsReturned: APIClient.ItemlListHandler = { (_: [Item]?, error: Error?) in
+        let completionHandlerAfterDataIsReturned: APIClient.ItemlListHandler = { (_: [ItemProtocol]?, error: Error?) in
             theError = error
         }
         sut.getItems(completion: completionHandlerAfterDataIsReturned)
@@ -146,6 +147,27 @@ class APIClientTests: XCTestCase {
         let anyerror = NSError(domain: "myerror", code: 112, userInfo: nil)
         mocksession.completionHandler?(nil, nil, anyerror as Error)
         XCTAssertNotNil(theError)
+    }
+    
+    class MockItem: ItemProtocol{
+        var title: String = ""
+        var description: String = ""
+        var thumbnail: URL?
+        
+        var callsDecoder = false
+        
+        enum CodingKeys: String, CodingKey {
+            case title
+            case description
+            case thumbnail = "image"
+        }
+        
+        init(){
+        }
+        
+        required init(from decoder: Decoder) throws {
+            callsDecoder = true
+        }
     }
     
     class MockSession: DataTaskCreatorProtocol {
@@ -167,6 +189,19 @@ class APIClientTests: XCTestCase {
 
         override func resume() {
             resumeCalled = true
+        }
+    }
+    
+    class MockParser: JsonParser<[MockItem]> {
+        var throwsError: Error?
+        var itemsToReturn: [MockItem] = [MockItem()]
+        
+        override func decode(data: Data) throws -> [APIClientTests.MockItem] {
+            if let throwsError = throwsError {
+                throw throwsError
+            }
+            
+            return itemsToReturn
         }
     }
 }
