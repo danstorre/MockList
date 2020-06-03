@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ItemManager: ItemListHolder{
+class ItemManager<T: ItemProtocol>: ItemListHolder{
     var arrayOfItems: [ItemProtocol]
-    init(_ array: [Item]) {
+    init(_ array: [T]) {
         self.arrayOfItems = array
     }
 }
