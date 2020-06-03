@@ -30,9 +30,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         listvc.fetcher = fetcher
         fetcher.delegate = listvc
         
+        //add listvc to navigationcontroller.
+        let navController = UINavigationController()
+        
+        //configure router
+        let router = DetailItemRouter(navController)
+        listvc.routerController = ItemNavigationController(router: router, itemListHolder: itemManager!)
+        
+        navController.viewControllers.append(listvc)
+        
         guard let windowScene = scene as? UIWindowScene else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = listvc
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
 
