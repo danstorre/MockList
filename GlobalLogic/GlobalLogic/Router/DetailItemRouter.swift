@@ -33,11 +33,11 @@ class DetailItemRouter: DetailItemVcPresenter{
     }
 }
 
-protocol CanHaveFetcher {
-    var fetcher: URLFetcher? {get set}
+protocol CanHaveImageFetcher {
+    var fetcher: ImageFetcher? {get set}
 }
 
-protocol DetailVcProtocol: UIViewController, HasSelectedItemProtocol, CanHaveFetcher {
+protocol DetailVcProtocol: UIViewController, HasSelectedItemProtocol, CanHaveImageFetcher {
     var titleLabel: UILabel! { get set }
     var descriptionLabel: UILabel! { get set }
     var imageView: UIImageView! {get set}

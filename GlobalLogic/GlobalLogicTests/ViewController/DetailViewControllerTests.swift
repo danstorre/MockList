@@ -9,8 +9,8 @@
 import XCTest
 @testable import GlobalLogic
 
-protocol MockFetcherProtocol: URLFetcher {
-    var completion: DataHandler? {get set}
+protocol MockFetcherProtocol: ImageFetcher {
+    var completion: ImageHandler? {get set}
     var callsFetchData: Bool {get set}
 }
 
@@ -38,8 +38,8 @@ class DetailViewControllerTests: XCTestCase {
         let vc = createADetailVCWithImageFetcher(with: itemWithUrl, and: fetcher)
         _ = vc.view
         //and fetcher has image data.
-        let imageData = UIImage(named: "icono")!.pngData()
-        fetcher.completion?(imageData, nil)
+        let imageData = UIImage(named: "icono")!
+        fetcher.completion?(imageData)
         
         //then assert that vc calls its imageFetcher.
         XCTAssertTrue(fetcher.callsFetchData)
@@ -56,7 +56,7 @@ class DetailViewControllerTests: XCTestCase {
         let vc = createADetailVCWithImageFetcher(with: itemWithUrl, and: fetcher)
         _ = vc.view
         //and fetcher has image data.
-        fetcher.completion?(nil, nil)
+        fetcher.completion?(nil)
         
         //then assert that vc calls its imageFetcher.
         XCTAssertTrue(fetcher.callsFetchData)
@@ -76,23 +76,6 @@ class DetailViewControllerTests: XCTestCase {
         XCTAssertTrue(vc.imageView.isHidden)
     }
     
-    func testViewDidLoad_WhenImageUrlIsPresented_butServiceReturnsAnError_ShouldHideImageview(){
-        //given an item with url.
-        let itemWithUrl = createItemWithUrl()
-        
-        //when presenting the detail vc with that item.
-        let fetcher = createFetcher()
-        let vc = createADetailVCWithImageFetcher(with: itemWithUrl, and: fetcher)
-        _ = vc.view
-        //and fetcher has image data.
-        fetcher.completion?(nil, MockError.someError)
-        
-        //then assert that vc calls its imageFetcher.
-        XCTAssertTrue(fetcher.callsFetchData)
-        //and assert that imageView is hidden
-        XCTAssertTrue(vc.imageView.isHidden)
-    }
-    
     enum MockError: Error {
         case someError
     }
@@ -108,7 +91,7 @@ class DetailViewControllerTests: XCTestCase {
     }
     
     func createADetailVCWithImageFetcher(with item: ItemProtocol,
-                                         and fetcher: URLFetcher) -> DetailVcProtocol{
+                                         and fetcher: ImageFetcher) -> DetailVcProtocol{
         var vc = createADetailVC(with: item)
         vc.fetcher = fetcher
         
@@ -132,8 +115,8 @@ class DetailViewControllerTests: XCTestCase {
     
     class MockFetcher: MockFetcherProtocol {
         var callsFetchData: Bool = false
-        var completion: DataHandler?
-        func fetchData(from url: URL, completion: @escaping(DataHandler)) {
+        var completion: ImageHandler?
+        func fetchImage(from url: URL, completion: @escaping (ImageHandler)) {
             callsFetchData = true
             self.completion = completion
         }

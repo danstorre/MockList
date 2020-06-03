@@ -117,7 +117,6 @@ class ItemFetcherTests: XCTestCase {
         var completion: ItemlListHandler?
         var completionData: DataHandler?
         
-        
         func getItems(completion: @escaping (ItemlListHandler)) {
             getItemsGetsCalled = true
             self.completion = completion

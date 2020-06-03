@@ -15,7 +15,7 @@ class DetailViewController: UIViewController, DetailVcProtocol {
     @IBOutlet var imageView: UIImageView!
     
     var selectedItem: ItemProtocol?
-    var fetcher: URLFetcher?
+    var fetcher: ImageFetcher?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +30,9 @@ class DetailViewController: UIViewController, DetailVcProtocol {
     }
     
     private func configureImageViewWith(url imageUrl: URL) {
-        fetcher?.fetchData(from: imageUrl, completion: { [weak self] (data, error) in
-            
-            guard error == nil else{
-                self?.hideImageView()
-                return
-            }
-            
-            if let data = data {
-                self?.imageView.image = UIImage(data: data)
+        fetcher?.fetchImage(from: imageUrl, completion: {[weak self] (image) in
+            if let image = image {
+                self?.imageView.image = image
             } else {
                 self?.hideImageView()
             }
