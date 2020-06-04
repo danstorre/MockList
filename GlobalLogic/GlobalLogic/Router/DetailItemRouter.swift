@@ -28,6 +28,7 @@ class DetailItemRouter: DetailItemVcPresenter{
             fatalError("DetailViewController is not configured in main story board.")
         }
         vcDetail.selectedItem = selectedItem
+        vcDetail.fetcher = ImageService()
         
         navigationController?.pushViewController(vcDetail, animated: true)
     }

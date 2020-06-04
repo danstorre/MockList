@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB95EFAE2488712D00ACDB24 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95EFAD2488712D00ACDB24 /* ImageService.swift */; };
 		FBA083AF2487FC450032788B /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083AE2487FC450032788B /* ItemManager.swift */; };
 		FBA083B124881BE60032788B /* ItemNavigationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083B024881BE60032788B /* ItemNavigationControllerTests.swift */; };
 		FBA083B324881D5B0032788B /* ItemNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083B224881D5B0032788B /* ItemNavigationController.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB95EFAD2488712D00ACDB24 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		FBA083AE2487FC450032788B /* ItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
 		FBA083B024881BE60032788B /* ItemNavigationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNavigationControllerTests.swift; sourceTree = "<group>"; };
 		FBA083B224881D5B0032788B /* ItemNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNavigationController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			children = (
 				FBC209F4248585740060848E /* ItemFetcher.swift */,
 				FBA083B224881D5B0032788B /* ItemNavigationController.swift */,
+				FB95EFAD2488712D00ACDB24 /* ImageService.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				FBC209F92485B9D50060848E /* DownSampler.swift in Sources */,
 				FBA083B9248843640032788B /* DetailItemRouter.swift in Sources */,
 				FBC209E5248446D10060848E /* ListTableViewController.swift in Sources */,
+				FB95EFAE2488712D00ACDB24 /* ImageService.swift in Sources */,
 				FBC209E82484527A0060848E /* ItemCell.swift in Sources */,
 				FBC209E02482BBDC0060848E /* APIClient.swift in Sources */,
 				FBC209F5248585740060848E /* ItemFetcher.swift in Sources */,
