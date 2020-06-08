@@ -11,11 +11,12 @@ import XCTest
 
 class ItemDataSourceTests: XCTestCase {
     var sut: ItemDataSource!
+    var itemListHolder: ItemListHolder!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         try super.setUpWithError()
-        let itemListHolder = MockitemListHolder()
+        itemListHolder = MockitemListHolder()
         sut = ItemDataSource(presenting: itemListHolder)
     }
 
@@ -32,12 +33,12 @@ class ItemDataSourceTests: XCTestCase {
     }
     
     func testGetThumnailURL_WhenItemPresentableHasnoThumnailURL_shouldReturnNil(){
-        sut.itemListHolder.arrayOfItems[0].thumbnail = nil
+        itemListHolder.arrayOfItems[0].thumbnail = nil
         XCTAssertNil(sut.getThumnailURL(at: 0))
     }
     
     func testGetThumnailURL_WhenItemPresentableHasNoItems_ShouldReturnNil(){
-        sut.itemListHolder.arrayOfItems = [MockItem]()
+        itemListHolder.arrayOfItems = [MockItem]()
         XCTAssertNil(sut.getThumnailURL(at: 0))
     }
     
@@ -46,7 +47,7 @@ class ItemDataSourceTests: XCTestCase {
     }
     
     func testGetNumberOfRows_WhenItemPresentableHasNoItems_ShouldReturnZero(){
-        sut.itemListHolder.arrayOfItems = [MockItem]()
+        itemListHolder.arrayOfItems = [MockItem]()
         XCTAssertEqual(sut.getNumberOfRows(section: 0), 0)
     }
     
@@ -60,7 +61,7 @@ class ItemDataSourceTests: XCTestCase {
     }
     
     func testgetItemAndDescriptionTuple_WhenItemPresentableHasNoItems_ShouldReturnEmptyStrings(){
-        sut.itemListHolder.arrayOfItems = [MockItem]()
+        itemListHolder.arrayOfItems = [MockItem]()
         XCTAssertEqual(sut.getItemAndDescriptionTuple(at: 0).0, "")
         XCTAssertEqual(sut.getItemAndDescriptionTuple(at: 0).1, "")
     }
