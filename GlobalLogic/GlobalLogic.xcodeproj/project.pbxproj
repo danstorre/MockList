@@ -34,6 +34,8 @@
 		FBC209F5248585740060848E /* ItemFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209F4248585740060848E /* ItemFetcher.swift */; };
 		FBC209F7248585800060848E /* ItemFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209F6248585800060848E /* ItemFetcherTests.swift */; };
 		FBC209F92485B9D50060848E /* DownSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC209F82485B9D40060848E /* DownSampler.swift */; };
+		FBDA4389248FD0710093BCE7 /* NavigationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDA4388248FD0710093BCE7 /* NavigationFlow.swift */; };
+		FBDA438C248FD1050093BCE7 /* NavigationFlow+PropertyObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDA438B248FD1050093BCE7 /* NavigationFlow+PropertyObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		FBC209F4248585740060848E /* ItemFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFetcher.swift; sourceTree = "<group>"; };
 		FBC209F6248585800060848E /* ItemFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFetcherTests.swift; sourceTree = "<group>"; };
 		FBC209F82485B9D40060848E /* DownSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownSampler.swift; sourceTree = "<group>"; };
+		FBDA4388248FD0710093BCE7 /* NavigationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFlow.swift; sourceTree = "<group>"; };
+		FBDA438B248FD1050093BCE7 /* NavigationFlow+PropertyObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationFlow+PropertyObserver.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,12 +110,12 @@
 			path = GoToDetailITem;
 			sourceTree = "<group>";
 		};
-		FB808725248EFF240098092A /* Scenarios */ = {
+		FB808725248EFF240098092A /* Use Cases */ = {
 			isa = PBXGroup;
 			children = (
 				FB808724248EFEF30098092A /* GoToDetailITem */,
 			);
-			path = Scenarios;
+			path = "Use Cases";
 			sourceTree = "<group>";
 		};
 		FBA083B424883F470032788B /* Router */ = {
@@ -159,7 +163,8 @@
 		FBC209AF2481971F0060848E /* GlobalLogic */ = {
 			isa = PBXGroup;
 			children = (
-				FB808725248EFF240098092A /* Scenarios */,
+				FBDA438A248FD0840093BCE7 /* UserInteractions */,
+				FB808725248EFF240098092A /* Use Cases */,
 				FBA083B7248843540032788B /* Router */,
 				FBC209EF248578100060848E /* Presenter */,
 				FBC209EB248568460060848E /* Network Services */,
@@ -253,6 +258,15 @@
 				FBC209F0248578280060848E /* ItemDataSource.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FBDA438A248FD0840093BCE7 /* UserInteractions */ = {
+			isa = PBXGroup;
+			children = (
+				FBDA4388248FD0710093BCE7 /* NavigationFlow.swift */,
+				FBDA438B248FD1050093BCE7 /* NavigationFlow+PropertyObserver.swift */,
+			);
+			path = UserInteractions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBDA438C248FD1050093BCE7 /* NavigationFlow+PropertyObserver.swift in Sources */,
 				FBC209D62481A53B0060848E /* Item.swift in Sources */,
 				FBC209F1248578280060848E /* ItemDataSource.swift in Sources */,
 				FBC209B52481971F0060848E /* ViewController.swift in Sources */,
@@ -369,6 +384,7 @@
 				FB95EFAE2488712D00ACDB24 /* ImageService.swift in Sources */,
 				FBC209E82484527A0060848E /* ItemCell.swift in Sources */,
 				FBC209E02482BBDC0060848E /* APIClient.swift in Sources */,
+				FBDA4389248FD0710093BCE7 /* NavigationFlow.swift in Sources */,
 				FBC209F5248585740060848E /* ItemFetcher.swift in Sources */,
 				FBA083AF2487FC450032788B /* ItemManager.swift in Sources */,
 				FBC209B32481971F0060848E /* SceneDelegate.swift in Sources */,

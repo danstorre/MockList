@@ -21,15 +21,15 @@ protocol SelectableHoldableItem: ISelectable{
 }
 
 protocol SelectableItemRouterDelegatable:  SelectableHoldableItem{
-    var router: NavigationDetailsUseCase? {get set}
+    var router: NavigationDetailsUseCase {get set}
 }
 
 struct NavigatesToItemDetails: SelectableItemRouterDelegatable{
     var item: ItemProtocol
-    var router: NavigationDetailsUseCase?
+    var router: NavigationDetailsUseCase
     
     func select() {
-        router?.gotoDetail(withItem: item)
+        router.gotoDetail(withItem: item)
     }
 }
 

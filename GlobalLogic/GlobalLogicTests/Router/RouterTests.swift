@@ -15,24 +15,14 @@ class RouterTests: XCTestCase {
 //    goToDetail(withItem: ItemProtocol)
     var navigationUseCase: MockNaviationUseCase!
 
-    func testPresentItemDetail_WhenGivenAListOfItemAndSelectingOneOfThem_ShouldPresentTheDetailOfTheItem(){
+    func testPresentItemDetail_GivenAListOfItem_WhenSelectingOneOfThem_ShouldPresentTheDetailOfTheItem(){
         
-        //given a list of items that user can select.
-        //and the first item of the list.
-        //when selecting the first item of the list
-        //then the user sees a screen with the details of the item.
-        
-        //given a list of items that user can select.
         let selectableItems = GivenASelectableArrayOfItems()
-        //and given the first item of the list.
+        
         let givenFirstSelectableItem = selectableItems.first
         
-        //when selecting the first item of the list
         givenFirstSelectableItem?.select()
         
-        //then the user sees a screen with the details of the item.
-        //assert delegates a message to present a detail screen.
-        //in this case goToDetail(withItem: ItemProtocol)
         XCTAssertNotNil(givenFirstSelectableItem)
         XCTAssertTrue(navigationUseCase.gotoDetailWithItemGetsCalled)
     }

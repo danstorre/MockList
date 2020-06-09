@@ -8,20 +8,6 @@
 
 import UIKit
 
-extension ControlFlowSelection: PropertyObserver {
-    func willChange(propertyName: String, newPropertyValue: Any?) {
-        if propertyName == ItemManagerKeys.arrayOfItems,
-                   let items = newPropertyValue as? [ItemProtocol] {
-            selectableItems = items.map { (item) -> SelectableItemRouterDelegatable in
-                return NavigatesToItemDetails(item: item,
-                                              router: RoutesToDetailItemViewController(navigationController: navControler))
-            }
-        }
-    }
-    
-    func didChange(propertyName: String, oldPropertyValue: Any?) {
-    }
-}
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -50,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         let navController = UINavigationController()
-        let controlFlow = ControlFlowSelection(navigationController: navController)
+        let controlFlow = NavigationFlowSelection(navigationController: navController)
         (items.observer as? ObserverCollection)?.addObserver(observer: controlFlow)
         listvc.selectionDelegate = controlFlow
         
