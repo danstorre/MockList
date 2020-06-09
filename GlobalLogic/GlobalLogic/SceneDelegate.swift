@@ -15,11 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var modelObservers: IObserverMediator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        
-        let items = configureModelAndObservers()
+        configureModelAndObservers()
         let listvc = createListVc()
         let fetcher = createFetcher(for: listvc)
         
@@ -30,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let detailUseCase = createDetailUseCaseImpl(with: navController)
         let controlFlow = NavigationDetailFlowSelection(router: detailUseCase)
         
-        (items.observer as? ObserverCollection)?.addObserver(observer: controlFlow)
+        modelObservers?.addObserver(observer: controlFlow)
         listvc.selectionDelegate = controlFlow
         
         navController.viewControllers.append(listvc)
@@ -60,12 +56,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return listvc
     }
 
-    func configureModelAndObservers() -> ItemManager<Item> {
+    func configureModelAndObservers() {
         modelObservers = ObserverMediator()
         let items = ItemManager([Item]())
         items.observer = modelObservers
         itemManager = items
-        return items
     }
 
 
