@@ -36,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         let navController = UINavigationController()
-        let controlFlow = NavigationFlowSelection(navigationController: navController)
+        let controlFlow = NavigationDetailFlowSelection(navigationController: navController)
         (items.observer as? ObserverCollection)?.addObserver(observer: controlFlow)
         listvc.selectionDelegate = controlFlow
         

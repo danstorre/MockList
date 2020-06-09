@@ -8,8 +8,8 @@
 
 import UIKit
 
-class NavigationFlowSelection: SelectableCollection {
-    var selectableItems: [ISelectable] = []
+class NavigationDetailFlowSelection: SelectableCollection {
+    var selectableItems: [NavigatesToItemDetails] = []
     let navControler: UINavigationController
     
     init(navigationController: UINavigationController) {
