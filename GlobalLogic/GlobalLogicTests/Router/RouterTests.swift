@@ -13,11 +13,13 @@ class RouterTests: XCTestCase {
 
 //    DetailsUseCase
 //    goToDetail(withItem: ItemProtocol)
-    var navigationUseCase: MockNaviationUseCase!
+    
 
     func testPresentItemDetail_GivenAListOfItem_WhenSelectingOneOfThem_ShouldPresentTheDetailOfTheItem(){
         
-        let selectableItems = GivenASelectableArrayOfItems()
+        let navigationUseCase: MockNaviationUseCase = MockNaviationUseCase()
+        let selectableItems = GivenASelectableArrayOfItemsThatGoToDetail(
+                                                with: navigationUseCase)
         
         let givenFirstSelectableItem = selectableItems.first
         
@@ -27,10 +29,9 @@ class RouterTests: XCTestCase {
         XCTAssertTrue(navigationUseCase.gotoDetailWithItemGetsCalled)
     }
     
-    func GivenASelectableArrayOfItems() -> [ISelectable]{
-        navigationUseCase = MockNaviationUseCase()
+    func GivenASelectableArrayOfItemsThatGoToDetail(with navUseCase: NavigationDetailsUseCase) -> [NavigatesToItemDetails]{
         let items = [NavigatesToItemDetails(item: MockItem(),
-                                           router: navigationUseCase)]
+                                           router: navUseCase)]
         return items
     }
     
