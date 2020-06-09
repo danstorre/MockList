@@ -29,7 +29,7 @@ class RouterTests: XCTestCase {
         XCTAssertTrue(navigationUseCase.gotoDetailWithItemGetsCalled)
     }
     
-    func GivenASelectableArrayOfItemsThatGoToDetail(with navUseCase: NavigationDetailsUseCase) -> [NavigatesToItemDetails]{
+    func GivenASelectableArrayOfItemsThatGoToDetail(with navUseCase: NavigationDetailsUseCase) -> [ISelectable]{
         let items = [NavigatesToItemDetails(item: MockItem(),
                                            router: navUseCase)]
         return items
