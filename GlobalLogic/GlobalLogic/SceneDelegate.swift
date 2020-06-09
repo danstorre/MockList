@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension DetailControlFlowProtocol: PropertyObserver {
+extension ControlFlowSelection: PropertyObserver {
     func willChange(propertyName: String, newPropertyValue: Any?) {
         if propertyName == ItemManagerKeys.arrayOfItems,
                    let items = newPropertyValue as? [ItemProtocol] {
@@ -48,11 +48,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         listvc.fetcher = fetcher
         fetcher.delegate = listvc
         
-        //add listvc to navigationcontroller.
-        let navController = UINavigationController()
-        let controlFlow = DetailControlFlowProtocol(navigationController: navController)
-        (items.observer as? ObserverCollection)?.addObserver(observer: controlFlow)
         
+        let navController = UINavigationController()
+        let controlFlow = ControlFlowSelection(navigationController: navController)
+        (items.observer as? ObserverCollection)?.addObserver(observer: controlFlow)
         listvc.selectionDelegate = controlFlow
         
         navController.viewControllers.append(listvc)

@@ -52,7 +52,6 @@ class ListTableViewController: UITableViewController {
     
     var fetcher: ItemListFetcher!
     var dataSource: ItemLisDataSource!
-//    var routerController: Selectable?
     var selectionDelegate: SelectableCollection?
     
     private lazy var imagePlaceHolder = UIImage(named: "icono")!

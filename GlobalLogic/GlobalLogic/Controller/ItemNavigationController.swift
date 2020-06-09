@@ -51,7 +51,7 @@ class ItemNavigationController: ItemSelectableNavigatable{
     }
 }
 
-class DetailControlFlowProtocol: SelectableCollection {
+class ControlFlowSelection: SelectableCollection {
     var selectableItems: [ISelectable] = []
     let navControler: UINavigationController
     
