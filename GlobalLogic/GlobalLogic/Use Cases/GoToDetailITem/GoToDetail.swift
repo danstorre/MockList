@@ -16,15 +16,7 @@ protocol ISelectable {
     func select()
 }
 
-protocol SelectableHoldableItem: ISelectable{
-    var item: ItemProtocol { get set }
-}
-
-protocol SelectableItemRouterDelegatable:  SelectableHoldableItem{
-    var router: NavigationDetailsUseCase {get set}
-}
-
-struct NavigatesToItemDetails: SelectableItemRouterDelegatable{
+struct NavigatesToItemDetails: ISelectable{
     var item: ItemProtocol
     var router: NavigationDetailsUseCase
     

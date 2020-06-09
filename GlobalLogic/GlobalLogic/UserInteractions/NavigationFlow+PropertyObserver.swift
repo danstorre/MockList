@@ -12,7 +12,7 @@ extension NavigationFlowSelection: PropertyObserver {
     func willChange(propertyName: String, newPropertyValue: Any?) {
         if propertyName == ItemManagerKeys.arrayOfItems,
                    let items = newPropertyValue as? [ItemProtocol] {
-            selectableItems = items.map { (item) -> SelectableItemRouterDelegatable in
+            selectableItems = items.map { (item) -> ISelectable in
                 return NavigatesToItemDetails(item: item,
                                               router: RoutesToDetailItemViewController(navigationController: navControler))
             }
