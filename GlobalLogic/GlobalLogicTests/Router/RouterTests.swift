@@ -25,7 +25,6 @@ class RouterTests: XCTestCase {
         
         givenFirstSelectableItem?.select()
         
-        XCTAssertNotNil(givenFirstSelectableItem)
         XCTAssertTrue(navigationUseCase.gotoDetailWithItemGetsCalled)
     }
     
