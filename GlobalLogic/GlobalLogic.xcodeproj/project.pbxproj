@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB808727248EFF3F0098092A /* GoToDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB808726248EFF3E0098092A /* GoToDetail.swift */; };
 		FB95EFAE2488712D00ACDB24 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95EFAD2488712D00ACDB24 /* ImageService.swift */; };
 		FBA083AF2487FC450032788B /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083AE2487FC450032788B /* ItemManager.swift */; };
 		FBA083B124881BE60032788B /* ItemNavigationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083B024881BE60032788B /* ItemNavigationControllerTests.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB808726248EFF3E0098092A /* GoToDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToDetail.swift; sourceTree = "<group>"; };
 		FB95EFAD2488712D00ACDB24 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		FBA083AE2487FC450032788B /* ItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
 		FBA083B024881BE60032788B /* ItemNavigationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNavigationControllerTests.swift; sourceTree = "<group>"; };
@@ -96,6 +98,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB808724248EFEF30098092A /* GoToDetailITem */ = {
+			isa = PBXGroup;
+			children = (
+				FB808726248EFF3E0098092A /* GoToDetail.swift */,
+			);
+			path = GoToDetailITem;
+			sourceTree = "<group>";
+		};
+		FB808725248EFF240098092A /* Scenarios */ = {
+			isa = PBXGroup;
+			children = (
+				FB808724248EFEF30098092A /* GoToDetailITem */,
+			);
+			path = Scenarios;
+			sourceTree = "<group>";
+		};
 		FBA083B424883F470032788B /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +159,7 @@
 		FBC209AF2481971F0060848E /* GlobalLogic */ = {
 			isa = PBXGroup;
 			children = (
+				FB808725248EFF240098092A /* Scenarios */,
 				FBA083B7248843540032788B /* Router */,
 				FBC209EF248578100060848E /* Presenter */,
 				FBC209EB248568460060848E /* Network Services */,
@@ -345,6 +364,7 @@
 				FBA083B324881D5B0032788B /* ItemNavigationController.swift in Sources */,
 				FBC209F92485B9D50060848E /* DownSampler.swift in Sources */,
 				FBA083B9248843640032788B /* DetailItemRouter.swift in Sources */,
+				FB808727248EFF3F0098092A /* GoToDetail.swift in Sources */,
 				FBC209E5248446D10060848E /* ListTableViewController.swift in Sources */,
 				FB95EFAE2488712D00ACDB24 /* ImageService.swift in Sources */,
 				FBC209E82484527A0060848E /* ItemCell.swift in Sources */,

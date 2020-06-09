@@ -50,3 +50,27 @@ class ItemNavigationController: ItemSelectableNavigatable{
         router.present()
     }
 }
+
+class DetailControlFlowProtocol: Selectable, HasItemListHolder {
+    var itemListHolder: ItemListHolder
+    var router: NavigationDetailsUseCase?
+    
+    init(router: NavigationDetailsUseCase, items: ItemListHolder) {
+        self.router = router
+        self.itemListHolder = items
+    }
+    
+    func selectsItem(at index: Int) {
+        guard !itemListHolder.arrayOfItems.isEmpty,
+                   itemListHolder.arrayOfItems.indices.contains(index) else {
+                       return
+        }
+        let item = NavigatesToItemDetails(item: itemListHolder.arrayOfItems[index],
+                                          router: router)
+        item.selected()
+    }
+}
+
+
+
+

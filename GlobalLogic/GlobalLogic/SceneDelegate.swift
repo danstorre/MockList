@@ -34,8 +34,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navController = UINavigationController()
         
         //configure router
-        let router = DetailItemRouter(navController)
-        listvc.routerController = ItemNavigationController(router: router, itemListHolder: itemManager!)
+        var router = RoutesToDetailItemViewController()
+        router.navigationController = navController
+        listvc.routerController = DetailControlFlowProtocol(router: RoutesToDetailItemViewController(),
+                                                            items: itemManager!)
         
         navController.viewControllers.append(listvc)
         

@@ -43,3 +43,5 @@ protocol DetailVcProtocol: UIViewController, HasSelectedItemProtocol, CanHaveIma
     var descriptionLabel: UILabel! { get set }
     var imageView: UIImageView! {get set}
 }
+
+
