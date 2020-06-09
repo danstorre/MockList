@@ -12,7 +12,7 @@ extension NavigationDetailFlowSelection: PropertyObserver {
     func willChange(propertyName: String, newPropertyValue: Any?) {
         if propertyName == ItemManagerKeys.arrayOfItems,
             let items = newPropertyValue as? [ItemProtocol] {
-            selectableItems = items.map { (item) -> NavigatesToItemDetails in
+            selectableItemsThatNavigateToItemDetails = items.map { (item) -> NavigatesToItemDetails in
                 return NavigatesToItemDetails(item: item,
                                               router: router)
             }

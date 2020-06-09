@@ -9,7 +9,7 @@
 import UIKit
 
 class NavigationDetailFlowSelection: SelectableCollection {
-    var selectableItems: [NavigatesToItemDetails] = []
+    var selectableItemsThatNavigateToItemDetails: [NavigatesToItemDetails] = []
     let router: NavigationDetailsUseCase
     
     init(router: NavigationDetailsUseCase) {
@@ -17,10 +17,10 @@ class NavigationDetailFlowSelection: SelectableCollection {
     }
     
     func getSelectableItemAt(indexPath : IndexPath) -> ISelectable? {
-        guard !selectableItems.isEmpty,
-            selectableItems.indices.contains(indexPath.row) else {
+        guard !selectableItemsThatNavigateToItemDetails.isEmpty,
+            selectableItemsThatNavigateToItemDetails.indices.contains(indexPath.row) else {
                 return nil
         }
-        return selectableItems[indexPath.row]
+        return selectableItemsThatNavigateToItemDetails[indexPath.row]
     }
 }
