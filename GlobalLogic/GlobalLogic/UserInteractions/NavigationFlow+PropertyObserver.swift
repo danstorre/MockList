@@ -14,8 +14,7 @@ extension NavigationDetailFlowSelection: PropertyObserver {
             let items = newPropertyValue as? [ItemProtocol] {
             selectableItems = items.map { (item) -> NavigatesToItemDetails in
                 return NavigatesToItemDetails(item: item,
-                                              router: RoutesToDetailItemViewController(
-                                                navigationController: navControler))
+                                              router: router)
             }
         }
     }

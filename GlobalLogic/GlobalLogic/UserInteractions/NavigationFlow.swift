@@ -10,10 +10,10 @@ import UIKit
 
 class NavigationDetailFlowSelection: SelectableCollection {
     var selectableItems: [NavigatesToItemDetails] = []
-    let navControler: UINavigationController
+    let router: NavigationDetailsUseCase
     
-    init(navigationController: UINavigationController) {
-        self.navControler = navigationController
+    init(router: NavigationDetailsUseCase) {
+        self.router = router
     }
     
     func getSelectableItemAt(indexPath : IndexPath) -> ISelectable? {
