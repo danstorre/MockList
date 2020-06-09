@@ -16,11 +16,11 @@ protocol ISelectable {
     func select()
 }
 
-protocol SelectableItemItemHoldable: ISelectable{
+protocol SelectableHoldableItem: ISelectable{
     var item: ItemProtocol { get set }
 }
 
-protocol SelectableItemRouterDelegatable:  SelectableItemItemHoldable{
+protocol SelectableItemRouterDelegatable:  SelectableHoldableItem{
     var router: NavigationDetailsUseCase? {get set}
 }
 
