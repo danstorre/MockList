@@ -44,11 +44,16 @@ protocol ItemLisDataSource {
     func getItemAndDescriptionTuple(at: Int) -> (String, String)
 }
 
+protocol SelectableCollection {
+    func getSelectableItemAt(indexPath: IndexPath) -> ISelectable?
+}
+
 class ListTableViewController: UITableViewController {
     
     var fetcher: ItemListFetcher!
     var dataSource: ItemLisDataSource!
-    var routerController: Selectable?
+//    var routerController: Selectable?
+    var selectionDelegate: SelectableCollection?
     
     private lazy var imagePlaceHolder = UIImage(named: "icono")!
     
@@ -110,7 +115,7 @@ class ListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        routerController?.selectsItem(at: indexPath.row)
+        selectionDelegate?.getSelectableItemAt(indexPath: indexPath)?.selected()
     }
     
     private func configurePlaceHolderTo(_ cell: ItemCell) {

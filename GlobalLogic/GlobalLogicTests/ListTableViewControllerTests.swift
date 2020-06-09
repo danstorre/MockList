@@ -130,15 +130,6 @@ class ListTableViewControllerTests: XCTestCase {
         XCTAssertEqual(cellToDisplay.mockImage, imagePlaceHolder)
     }
     
-    func testdidSelectRowAt_DelegatesPresentationToItsRouter() {
-        let mockTableView = MockTableView.mockTableViewWithDataSource(sut)
-        let mockPresenterController = MockPresenterController()
-        sut.routerController = mockPresenterController
-        sut.tableView(mockTableView, didSelectRowAt: IndexPath(row: 0, section: 0))
-        
-        XCTAssertTrue(mockPresenterController.selectAtRowDidCalled)
-    }
-    
     class MockPresenterController: Selectable {
         var selectAtRowDidCalled: Bool = false
         func selectsItem(at: Int){

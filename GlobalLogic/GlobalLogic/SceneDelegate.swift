@@ -8,17 +8,35 @@
 
 import UIKit
 
+extension DetailControlFlowProtocol: PropertyObserver {
+    func willChange(propertyName: String, newPropertyValue: Any?) {
+        if propertyName == ItemManagerKeys.arrayOfItems,
+                   let items = newPropertyValue as? [ItemProtocol] {
+            selectableItems = items.map { (item) -> SelectableItemRouterDelegatable in
+                return NavigatesToItemDetails(item: item,
+                                              router: RoutesToDetailItemViewController(navigationController: navControler))
+            }
+        }
+    }
+    
+    func didChange(propertyName: String, oldPropertyValue: Any?) {
+    }
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var itemManager: ItemListHolder?
+    var modelObservers: IObserverMediator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        
-        itemManager = ItemManager([Item]())
+        modelObservers = ObserverMediator()
+        let items = ItemManager([Item]())
+        items.observer = modelObservers
+        itemManager = items
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let listvc = storyboard.instantiateViewController(withIdentifier: "ListTableViewController") as! ListTableViewController
@@ -32,12 +50,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         //add listvc to navigationcontroller.
         let navController = UINavigationController()
+        let controlFlow = DetailControlFlowProtocol(navigationController: navController)
+        (items.observer as? ObserverCollection)?.addObserver(observer: controlFlow)
         
-        //configure router
-        var router = RoutesToDetailItemViewController()
-        router.navigationController = navController
-        listvc.routerController = DetailControlFlowProtocol(router: RoutesToDetailItemViewController(),
-                                                            items: itemManager!)
+        listvc.selectionDelegate = controlFlow
         
         navController.viewControllers.append(listvc)
         
