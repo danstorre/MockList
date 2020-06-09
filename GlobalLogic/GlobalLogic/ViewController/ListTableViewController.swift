@@ -114,7 +114,7 @@ class ListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        selectionDelegate?.getSelectableItemAt(indexPath: indexPath)?.selected()
+        selectionDelegate?.getSelectableItemAt(indexPath: indexPath)?.select()
     }
     
     private func configurePlaceHolderTo(_ cell: ItemCell) {

@@ -13,7 +13,7 @@ protocol NavigationDetailsUseCase{
 }
 
 protocol ISelectable {
-    func selected()
+    func select()
 }
 
 protocol SelectableItemItemHoldable: ISelectable{
@@ -28,7 +28,7 @@ struct NavigatesToItemDetails: SelectableItemRouterDelegatable{
     var item: ItemProtocol
     var router: NavigationDetailsUseCase?
     
-    func selected() {
+    func select() {
         router?.gotoDetail(withItem: item)
     }
 }

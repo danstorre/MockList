@@ -28,7 +28,7 @@ class RouterTests: XCTestCase {
         let givenFirstSelectableItem = selectableItems.first
         
         //when selecting the first item of the list
-        givenFirstSelectableItem?.selected()
+        givenFirstSelectableItem?.select()
         
         //then the user sees a screen with the details of the item.
         //assert delegates a message to present a detail screen.
