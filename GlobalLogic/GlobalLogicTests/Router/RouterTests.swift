@@ -14,9 +14,7 @@ class RouterTests: XCTestCase {
 //    DetailsUseCase
 //    goToDetail(withItem: ItemProtocol)
     
-
     func testPresentItemDetail_GivenAListOfItem_WhenSelectingOneOfThem_ShouldPresentTheDetailOfTheItem(){
-        
         let navigationUseCase: MockNaviationUseCase = MockNaviationUseCase()
         let selectableItems = GivenASelectableArrayOfItemsThatGoToDetail(
                                                 with: navigationUseCase)
