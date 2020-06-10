@@ -259,13 +259,13 @@
 			path = Internals;
 			sourceTree = "<group>";
 		};
-		FB07939F2491682F00E1E042 /* ItemRepresentation */ = {
+		FB07939F2491682F00E1E042 /* RepresentsAnItemProtocol */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793A02491684200E1E042 /* OpenApis */,
 				FB0793A12491684700E1E042 /* Internals */,
 			);
-			path = ItemRepresentation;
+			path = RepresentsAnItemProtocol;
 			sourceTree = "<group>";
 		};
 		FB0793A02491684200E1E042 /* OpenApis */ = {
@@ -284,13 +284,13 @@
 			path = Internals;
 			sourceTree = "<group>";
 		};
-		FB0793A6249168F600E1E042 /* ItemCollection */ = {
+		FB0793A6249168F600E1E042 /* HoldsAlistOfItemsThatAreObservable */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793A82491690B00E1E042 /* OpenApis */,
 				FB0793A72491690600E1E042 /* Internals */,
 			);
-			path = ItemCollection;
+			path = HoldsAlistOfItemsThatAreObservable;
 			sourceTree = "<group>";
 		};
 		FB0793A72491690600E1E042 /* Internals */ = {
@@ -310,13 +310,13 @@
 			path = OpenApis;
 			sourceTree = "<group>";
 		};
-		FB0793AF249169B200E1E042 /* ObserverMediator */ = {
+		FB0793AF249169B200E1E042 /* HandlesManyObservers */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793B0249169BC00E1E042 /* OpenApis */,
 				FB0793B1249169C100E1E042 /* Internals */,
 			);
-			path = ObserverMediator;
+			path = HandlesManyObservers;
 			sourceTree = "<group>";
 		};
 		FB0793B0249169BC00E1E042 /* OpenApis */ = {
@@ -351,13 +351,13 @@
 			path = Internals;
 			sourceTree = "<group>";
 		};
-		FB0793B8249175BD00E1E042 /* UrlFetcher */ = {
+		FB0793B8249175BD00E1E042 /* HelpsToFecthDataFromUrl */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793BC2491760000E1E042 /* OpenApis */,
 				FB0793BB249175FB00E1E042 /* Internals */,
 			);
-			path = UrlFetcher;
+			path = HelpsToFecthDataFromUrl;
 			sourceTree = "<group>";
 		};
 		FB0793BB249175FB00E1E042 /* Internals */ = {
@@ -377,13 +377,13 @@
 			path = OpenApis;
 			sourceTree = "<group>";
 		};
-		FB0793BF2491763800E1E042 /* ItemService */ = {
+		FB0793BF2491763800E1E042 /* ProvidesAItemListHolderFromAGivenApiService */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793C42491769A00E1E042 /* OpenApis */,
 				FB0793C5249176B300E1E042 /* Internals */,
 			);
-			path = ItemService;
+			path = ProvidesAItemListHolderFromAGivenApiService;
 			sourceTree = "<group>";
 		};
 		FB0793C42491769A00E1E042 /* OpenApis */ = {
@@ -405,12 +405,12 @@
 			path = Internals;
 			sourceTree = "<group>";
 		};
-		FB0793CA249177B200E1E042 /* ImageService */ = {
+		FB0793CA249177B200E1E042 /* ImplementsImageFetcher */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793CB249177B900E1E042 /* Internals */,
 			);
-			path = ImageService;
+			path = ImplementsImageFetcher;
 			sourceTree = "<group>";
 		};
 		FB0793CB249177B900E1E042 /* Internals */ = {
@@ -421,13 +421,13 @@
 			path = Internals;
 			sourceTree = "<group>";
 		};
-		FB0793CD249177F000E1E042 /* GlobalLogicServices */ = {
+		FB0793CD249177F000E1E042 /* RetrievesInfoFromGlobalLogicServices */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793CE249177FB00E1E042 /* OpenApis */,
 				FB0793CF2491780100E1E042 /* Internals */,
 			);
-			path = GlobalLogicServices;
+			path = RetrievesInfoFromGlobalLogicServices;
 			sourceTree = "<group>";
 		};
 		FB0793CE249177FB00E1E042 /* OpenApis */ = {
@@ -577,13 +577,13 @@
 				FB0793DA249178CD00E1E042 /* ProvidesADownSampleGivenAUrlImage */,
 				FB0793DC249178EE00E1E042 /* ParsersAnyObjectToJsonIfDecodable */,
 				FB0793DE2491793100E1E042 /* ExtendsURLSessionFunctionalityToConformToDataTaskCreatorProtocol */,
-				FB0793CD249177F000E1E042 /* GlobalLogicServices */,
-				FB0793BF2491763800E1E042 /* ItemService */,
-				FB0793B8249175BD00E1E042 /* UrlFetcher */,
-				FB0793CA249177B200E1E042 /* ImageService */,
-				FB07939F2491682F00E1E042 /* ItemRepresentation */,
-				FB0793AF249169B200E1E042 /* ObserverMediator */,
-				FB0793A6249168F600E1E042 /* ItemCollection */,
+				FB0793CD249177F000E1E042 /* RetrievesInfoFromGlobalLogicServices */,
+				FB0793BF2491763800E1E042 /* ProvidesAItemListHolderFromAGivenApiService */,
+				FB0793B8249175BD00E1E042 /* HelpsToFecthDataFromUrl */,
+				FB0793CA249177B200E1E042 /* ImplementsImageFetcher */,
+				FB07939F2491682F00E1E042 /* RepresentsAnItemProtocol */,
+				FB0793AF249169B200E1E042 /* HandlesManyObservers */,
+				FB0793A6249168F600E1E042 /* HoldsAlistOfItemsThatAreObservable */,
 				FBC209B02481971F0060848E /* AppDelegate.swift */,
 				FBC209B22481971F0060848E /* SceneDelegate.swift */,
 				FBC209B62481971F0060848E /* Main.storyboard */,
