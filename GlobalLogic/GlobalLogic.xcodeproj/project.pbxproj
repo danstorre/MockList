@@ -272,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				FB0793A2249168AC00E1E042 /* ItemErrors.swift */,
-				FB0793A4249168CE00E1E042 /* ItemProtocol.swift */,
 			);
 			path = OpenApis;
 			sourceTree = "<group>";
@@ -509,6 +508,7 @@
 		FB0793E1249179B900E1E042 /* OpenApis */ = {
 			isa = PBXGroup;
 			children = (
+				FB0793A4249168CE00E1E042 /* ItemProtocol.swift */,
 				FB0793E3249179C900E1E042 /* ItemListHolderProtocol.swift */,
 			);
 			path = OpenApis;
