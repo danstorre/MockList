@@ -36,6 +36,7 @@
 		FB0793EB24917EA300E1E042 /* ItemDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0793EA24917EA300E1E042 /* ItemDataSourceProtocol.swift */; };
 		FB0793ED24917EDC00E1E042 /* ItemListFetcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0793EC24917EDC00E1E042 /* ItemListFetcherProtocol.swift */; };
 		FB0793EF24917F0E00E1E042 /* UrlFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0793EE24917F0E00E1E042 /* UrlFetcher.swift */; };
+		FB0793F124917F9C00E1E042 /* ListTableViewController+ItemFetcherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0793F024917F9C00E1E042 /* ListTableViewController+ItemFetcherDelegate.swift */; };
 		FB808727248EFF3F0098092A /* GoToDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB808726248EFF3E0098092A /* GoToDetail.swift */; };
 		FB95EFAE2488712D00ACDB24 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95EFAD2488712D00ACDB24 /* ImageService.swift */; };
 		FBA083AF2487FC450032788B /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083AE2487FC450032788B /* ItemManager.swift */; };
@@ -103,6 +104,7 @@
 		FB0793EA24917EA300E1E042 /* ItemDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataSourceProtocol.swift; sourceTree = "<group>"; };
 		FB0793EC24917EDC00E1E042 /* ItemListFetcherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListFetcherProtocol.swift; sourceTree = "<group>"; };
 		FB0793EE24917F0E00E1E042 /* UrlFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlFetcher.swift; sourceTree = "<group>"; };
+		FB0793F024917F9C00E1E042 /* ListTableViewController+ItemFetcherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListTableViewController+ItemFetcherDelegate.swift"; sourceTree = "<group>"; };
 		FB808726248EFF3E0098092A /* GoToDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToDetail.swift; sourceTree = "<group>"; };
 		FB95EFAD2488712D00ACDB24 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		FBA083AE2487FC450032788B /* ItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				FBC209E4248446D10060848E /* ListTableViewController.swift */,
 				FBC209E72484527A0060848E /* ItemCell.swift */,
+				FB0793F024917F9C00E1E042 /* ListTableViewController+ItemFetcherDelegate.swift */,
 			);
 			path = Internals;
 			sourceTree = "<group>";
@@ -772,6 +775,7 @@
 				FB0793E724917A6F00E1E042 /* DetailVCProtocol.swift in Sources */,
 				FBC209F5248585740060848E /* ItemFetcher.swift in Sources */,
 				FBA083AF2487FC450032788B /* ItemManager.swift in Sources */,
+				FB0793F124917F9C00E1E042 /* ListTableViewController+ItemFetcherDelegate.swift in Sources */,
 				FB0793E4249179C900E1E042 /* ItemListHolderProtocol.swift in Sources */,
 				FBC209B32481971F0060848E /* SceneDelegate.swift in Sources */,
 				FB0793D9249178A100E1E042 /* URLSession+DataTaskCreatorProtocol.swift in Sources */,
