@@ -10,30 +10,6 @@ import UIKit
 
 struct UrlFetcher: URLFetcher {}
 
-protocol ImageFetcher {
-    typealias ImageHandler = ((UIImage?) -> Void)
-    func fetchImage(from: URL, completion: @escaping(ImageHandler))
-}
-
-extension ImageFetcher {
-    func fetchImage(from url: URL, completion: @escaping((UIImage?) -> Void)) {
-        UrlFetcher().fetchData(from: url) { (imageData, error) in
-            guard error == nil else{
-                DispatchQueue.main.async {completion(nil)}
-                return
-            }
-            guard let imageData = imageData,
-            let image = UIImage(data: imageData) else {
-                DispatchQueue.main.async {completion(nil)}
-                return
-            }
-            DispatchQueue.main.async {
-                completion(image)
-            }
-        }
-    }
-}
-
 protocol ItemListFetcher: ImageFetcher {
     func fetchItems()
 }
@@ -42,10 +18,6 @@ protocol ItemLisDataSource {
     func getThumnailURL(at: Int) -> URL?
     func getNumberOfRows(section: Int) -> Int
     func getItemAndDescriptionTuple(at: Int) -> (String, String)
-}
-
-protocol SelectableCollection {
-    func getSelectableItemAt(indexPath: IndexPath) -> ISelectable?
 }
 
 class ListTableViewController: UITableViewController {

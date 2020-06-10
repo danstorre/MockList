@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB079385249141AB00E1E042 /* GoToItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB079384249141AB00E1E042 /* GoToItemProtocol.swift */; };
+		FB079388249141F000E1E042 /* SelectableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB079387249141F000E1E042 /* SelectableProtocol.swift */; };
+		FB07938B2491422900E1E042 /* NavigationsToItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB07938A2491422900E1E042 /* NavigationsToItem.swift */; };
+		FB079391249142D300E1E042 /* GetSelectableObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB079390249142D300E1E042 /* GetSelectableObjectProtocol.swift */; };
+		FB07939C2491440F00E1E042 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB07939B2491440F00E1E042 /* ImageFetcher.swift */; };
+		FB07939E2491442700E1E042 /* ImageFetcher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB07939D2491442700E1E042 /* ImageFetcher+Extension.swift */; };
 		FB808727248EFF3F0098092A /* GoToDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB808726248EFF3E0098092A /* GoToDetail.swift */; };
 		FB95EFAE2488712D00ACDB24 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95EFAD2488712D00ACDB24 /* ImageService.swift */; };
 		FBA083AF2487FC450032788B /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083AE2487FC450032788B /* ItemManager.swift */; };
@@ -49,6 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB079384249141AB00E1E042 /* GoToItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToItemProtocol.swift; sourceTree = "<group>"; };
+		FB079387249141F000E1E042 /* SelectableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableProtocol.swift; sourceTree = "<group>"; };
+		FB07938A2491422900E1E042 /* NavigationsToItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationsToItem.swift; sourceTree = "<group>"; };
+		FB079390249142D300E1E042 /* GetSelectableObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSelectableObjectProtocol.swift; sourceTree = "<group>"; };
+		FB07939B2491440F00E1E042 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
+		FB07939D2491442700E1E042 /* ImageFetcher+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageFetcher+Extension.swift"; sourceTree = "<group>"; };
 		FB808726248EFF3E0098092A /* GoToDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToDetail.swift; sourceTree = "<group>"; };
 		FB95EFAD2488712D00ACDB24 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		FBA083AE2487FC450032788B /* ItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
@@ -102,20 +114,104 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FB808724248EFEF30098092A /* GoToDetailITem */ = {
+		FB0793832491418600E1E042 /* OpenApis */ = {
+			isa = PBXGroup;
+			children = (
+				FB079384249141AB00E1E042 /* GoToItemProtocol.swift */,
+			);
+			path = OpenApis;
+			sourceTree = "<group>";
+		};
+		FB079386249141C200E1E042 /* Internals */ = {
 			isa = PBXGroup;
 			children = (
 				FB808726248EFF3E0098092A /* GoToDetail.swift */,
 			);
-			path = GoToDetailITem;
+			path = Internals;
 			sourceTree = "<group>";
 		};
-		FB808725248EFF240098092A /* Use Cases */ = {
+		FB07938C2491426700E1E042 /* Internals */ = {
 			isa = PBXGroup;
 			children = (
-				FB808724248EFEF30098092A /* GoToDetailITem */,
+				FBC209E4248446D10060848E /* ListTableViewController.swift */,
 			);
-			path = "Use Cases";
+			path = Internals;
+			sourceTree = "<group>";
+		};
+		FB07938D2491427800E1E042 /* ItemListing */ = {
+			isa = PBXGroup;
+			children = (
+				FB07938E2491428800E1E042 /* OpenApis */,
+				FB07938C2491426700E1E042 /* Internals */,
+			);
+			path = ItemListing;
+			sourceTree = "<group>";
+		};
+		FB07938E2491428800E1E042 /* OpenApis */ = {
+			isa = PBXGroup;
+			children = (
+				FB079387249141F000E1E042 /* SelectableProtocol.swift */,
+				FB079390249142D300E1E042 /* GetSelectableObjectProtocol.swift */,
+			);
+			path = OpenApis;
+			sourceTree = "<group>";
+		};
+		FB0793932491433900E1E042 /* RouterToDetailItem */ = {
+			isa = PBXGroup;
+			children = (
+				FB0793942491434800E1E042 /* Internals */,
+			);
+			path = RouterToDetailItem;
+			sourceTree = "<group>";
+		};
+		FB0793942491434800E1E042 /* Internals */ = {
+			isa = PBXGroup;
+			children = (
+				FB07938A2491422900E1E042 /* NavigationsToItem.swift */,
+			);
+			path = Internals;
+			sourceTree = "<group>";
+		};
+		FB0793952491436F00E1E042 /* NavigationDetailFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FB0793962491439700E1E042 /* Internals */,
+			);
+			path = NavigationDetailFlow;
+			sourceTree = "<group>";
+		};
+		FB0793962491439700E1E042 /* Internals */ = {
+			isa = PBXGroup;
+			children = (
+				FBDA4388248FD0710093BCE7 /* NavigationDetailFlowSelection.swift */,
+				FBDA438B248FD1050093BCE7 /* NavigationDetailFlowSelection+PropertyObserver.swift */,
+			);
+			path = Internals;
+			sourceTree = "<group>";
+		};
+		FB079397249143EF00E1E042 /* ImageFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				FB079398249143F500E1E042 /* OpenApis */,
+				FB079399249143FC00E1E042 /* Internals */,
+			);
+			path = ImageFetcher;
+			sourceTree = "<group>";
+		};
+		FB079398249143F500E1E042 /* OpenApis */ = {
+			isa = PBXGroup;
+			children = (
+				FB07939B2491440F00E1E042 /* ImageFetcher.swift */,
+			);
+			path = OpenApis;
+			sourceTree = "<group>";
+		};
+		FB079399249143FC00E1E042 /* Internals */ = {
+			isa = PBXGroup;
+			children = (
+				FB07939D2491442700E1E042 /* ImageFetcher+Extension.swift */,
+			);
+			path = Internals;
 			sourceTree = "<group>";
 		};
 		FBA083B424883F470032788B /* Router */ = {
@@ -163,8 +259,11 @@
 		FBC209AF2481971F0060848E /* GlobalLogic */ = {
 			isa = PBXGroup;
 			children = (
-				FBDA438A248FD0840093BCE7 /* UserInteractions */,
-				FB808725248EFF240098092A /* Use Cases */,
+				FB079397249143EF00E1E042 /* ImageFetcher */,
+				FB0793932491433900E1E042 /* RouterToDetailItem */,
+				FB0793952491436F00E1E042 /* NavigationDetailFlow */,
+				FB07938D2491427800E1E042 /* ItemListing */,
+				FBDA438A248FD0840093BCE7 /* DetailNavigation */,
 				FBA083B7248843540032788B /* Router */,
 				FBC209EF248578100060848E /* Presenter */,
 				FBC209EB248568460060848E /* Network Services */,
@@ -209,7 +308,6 @@
 		FBC209E3248446BF0060848E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				FBC209E4248446D10060848E /* ListTableViewController.swift */,
 				FBA083BA248849520032788B /* DetailViewController.swift */,
 			);
 			path = ViewController;
@@ -260,13 +358,13 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		FBDA438A248FD0840093BCE7 /* UserInteractions */ = {
+		FBDA438A248FD0840093BCE7 /* DetailNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				FBDA4388248FD0710093BCE7 /* NavigationDetailFlowSelection.swift */,
-				FBDA438B248FD1050093BCE7 /* NavigationDetailFlowSelection+PropertyObserver.swift */,
+				FB0793832491418600E1E042 /* OpenApis */,
+				FB079386249141C200E1E042 /* Internals */,
 			);
-			path = UserInteractions;
+			path = DetailNavigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,15 +472,21 @@
 				FBDA438C248FD1050093BCE7 /* NavigationDetailFlowSelection+PropertyObserver.swift in Sources */,
 				FBC209D62481A53B0060848E /* Item.swift in Sources */,
 				FBC209F1248578280060848E /* ItemDataSource.swift in Sources */,
+				FB07939E2491442700E1E042 /* ImageFetcher+Extension.swift in Sources */,
 				FBC209B52481971F0060848E /* ViewController.swift in Sources */,
 				FBC209B12481971F0060848E /* AppDelegate.swift in Sources */,
+				FB079391249142D300E1E042 /* GetSelectableObjectProtocol.swift in Sources */,
 				FBA083B324881D5B0032788B /* ItemNavigationController.swift in Sources */,
 				FBC209F92485B9D50060848E /* DownSampler.swift in Sources */,
 				FBA083B9248843640032788B /* DetailItemRouter.swift in Sources */,
 				FB808727248EFF3F0098092A /* GoToDetail.swift in Sources */,
+				FB079388249141F000E1E042 /* SelectableProtocol.swift in Sources */,
 				FBC209E5248446D10060848E /* ListTableViewController.swift in Sources */,
+				FB07939C2491440F00E1E042 /* ImageFetcher.swift in Sources */,
+				FB079385249141AB00E1E042 /* GoToItemProtocol.swift in Sources */,
 				FB95EFAE2488712D00ACDB24 /* ImageService.swift in Sources */,
 				FBC209E82484527A0060848E /* ItemCell.swift in Sources */,
+				FB07938B2491422900E1E042 /* NavigationsToItem.swift in Sources */,
 				FBC209E02482BBDC0060848E /* APIClient.swift in Sources */,
 				FBDA4389248FD0710093BCE7 /* NavigationDetailFlowSelection.swift in Sources */,
 				FBC209F5248585740060848E /* ItemFetcher.swift in Sources */,

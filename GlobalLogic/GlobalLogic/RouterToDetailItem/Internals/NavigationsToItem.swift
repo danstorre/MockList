@@ -1,29 +1,12 @@
 //
-//  GoToDetail.swift
+//  NavigationsToItem.swift
 //  GlobalLogic
 //
-//  Created by Daniel Torres on 6/8/20.
+//  Created by Daniel Torres on 6/10/20.
 //  Copyright © 2020 dansTeam. All rights reserved.
 //
 
 import UIKit
-
-protocol NavigationDetailsUseCase{
-    func gotoDetail(withItem: ItemProtocol)
-}
-
-protocol ISelectable {
-    func select()
-}
-
-struct NavigatesToItemDetails: ISelectable{
-    var item: ItemProtocol
-    var router: NavigationDetailsUseCase
-    
-    func select() {
-        router.gotoDetail(withItem: item)
-    }
-}
 
 struct RoutesToDetailItemViewController: NavigationDetailsUseCase {
     var navigationController: UINavigationController?
