@@ -8,36 +8,7 @@
 
 import UIKit
 
-enum APIProtocolError: Error {
-    case FetchedImageNotFound
-}
-
-protocol APIProtocol: URLFetcher {
-    typealias ItemlListHandler = ([ItemProtocol]?, Error?) -> Void
-    func getItems(completion: @escaping (ItemlListHandler))
-}
-
-protocol URLFetcher {
-    typealias DataHandler = (Data?, Error?) -> Void
-    func fetchData(from: URL, completion: @escaping(DataHandler))
-}
-
-extension URLFetcher {
-    func fetchData(from url: URL, completion: @escaping((Data?,Error?)->Void)){
-        DispatchQueue.global().async {
-            guard let downsampleImage = DownSamplerMethods.downsample(imageAt: url),
-            let downsampleImageData = downsampleImage.pngData() else{
-                DispatchQueue.main.async {completion(nil, APIProtocolError.FetchedImageNotFound)}
-                return
-            }
-            
-            DispatchQueue.main.async {
-                completion(downsampleImageData, nil)
-            }
-        }
-    }
-}
-
+//ListTableViewController+ItemFetcherDelegate
 extension ListTableViewController: ItemFetcherDelegate{
     func didFinish(with error: Error) {
         let alert = UIAlertController(title: "Error",
@@ -52,15 +23,6 @@ extension ListTableViewController: ItemFetcherDelegate{
     func didFinish() {
         tableView.reloadData()
     }
-}
-
-protocol ItemFetcherDelegate: class{
-    func didFinish(with error: Error)
-    func didFinish()
-}
-
-enum ItemFetcherError: Error {
-    case EmptyItemsFromService
 }
 
 class ItemFetcher: ItemListFetcher{

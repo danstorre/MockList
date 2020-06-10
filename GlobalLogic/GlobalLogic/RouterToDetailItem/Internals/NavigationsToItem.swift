@@ -12,7 +12,7 @@ struct RoutesToDetailItemViewController: NavigationDetailsUseCase {
     var navigationController: UINavigationController?
     func gotoDetail(withItem selectedItem: ItemProtocol) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        guard var vcDetail = storyBoard.instantiateViewController(identifier: "DetailViewController") as? DetailVcProtocol else {
+        guard let vcDetail = storyBoard.instantiateViewController(identifier: "DetailViewController") as? DetailVcProtocol else {
             fatalError("DetailViewController is not configured in main story board.")
         }
         vcDetail.selectedItem = selectedItem

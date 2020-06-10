@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol ItemListHolder: class{
-    var arrayOfItems: [ItemProtocol] {get set}
-}
-
 class ItemDataSource: ItemLisDataSource{
     
     var itemListHolder: ItemListHolder

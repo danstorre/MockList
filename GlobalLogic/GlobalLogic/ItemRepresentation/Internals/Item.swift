@@ -8,16 +8,6 @@
 
 import UIKit
 
-enum ItemError: Error{
-    case ErrorImageUrlIsNotValid
-}
-
-protocol ItemProtocol: Decodable {
-    var title: String {get set}
-    var description: String {get set}
-    var thumbnail: URL? {get set}
-}
-
 struct Item: ItemProtocol{
     var title: String
     var description: String
@@ -56,9 +46,7 @@ struct Item: ItemProtocol{
         }else {
             throw ItemError.ErrorImageUrlIsNotValid
         }
-        
     }
-    
 }
 
 

@@ -130,13 +130,6 @@ class ListTableViewControllerTests: XCTestCase {
         XCTAssertEqual(cellToDisplay.mockImage, imagePlaceHolder)
     }
     
-    class MockPresenterController: Selectable {
-        var selectAtRowDidCalled: Bool = false
-        func selectsItem(at: Int){
-            selectAtRowDidCalled = true
-        }
-    }
-    
     //check if rows are properly configured
     //fetches image.
     class MockItemListFetcher: ItemListFetcher, ItemLisDataSource {

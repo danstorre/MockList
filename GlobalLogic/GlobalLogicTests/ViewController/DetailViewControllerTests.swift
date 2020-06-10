@@ -83,7 +83,7 @@ class DetailViewControllerTests: XCTestCase {
     func createADetailVC(with item: ItemProtocol) -> DetailVcProtocol{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        var vc = (storyboard
+        let vc = (storyboard
             .instantiateViewController(withIdentifier: "DetailViewController") as! DetailVcProtocol)
         vc.selectedItem = item
         
@@ -92,7 +92,7 @@ class DetailViewControllerTests: XCTestCase {
     
     func createADetailVCWithImageFetcher(with item: ItemProtocol,
                                          and fetcher: ImageFetcher) -> DetailVcProtocol{
-        var vc = createADetailVC(with: item)
+        let vc = createADetailVC(with: item)
         vc.fetcher = fetcher
         
         return vc

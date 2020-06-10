@@ -8,35 +8,6 @@
 
 import Foundation
 
-enum WebserviceError : Error {
-    case DataEmptyError
-    case InvalidImageURLError
-    case ResponseError
-}
-
-protocol DataTaskCreatorProtocol {
-    func dataTask(with url: URL,
-                  completionHandler:
-        @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
-}
-
-extension URLSession: DataTaskCreatorProtocol{}
-
-protocol ParserProtocol {
-    associatedtype T: Decodable
-    func decode(data: Data) throws -> T
-}
-
-class JsonParser<DecodableType: Decodable>: ParserProtocol{
-    typealias T = DecodableType
-    
-    func decode(data: Data) throws -> T {
-        let jsonDecoder = JSONDecoder()
-        let items = try jsonDecoder.decode(T.self, from: data)
-        return items
-    }
-}
-
 class APIClient<T: ItemProtocol>: APIProtocol {
     lazy var session: DataTaskCreatorProtocol = URLSession.shared
     var parser: JsonParser<[T]>?
