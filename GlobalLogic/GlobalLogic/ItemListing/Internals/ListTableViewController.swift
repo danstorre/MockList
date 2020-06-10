@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ListTableViewController: UITableViewController {
     
     var fetcher: ItemListFetcher!
