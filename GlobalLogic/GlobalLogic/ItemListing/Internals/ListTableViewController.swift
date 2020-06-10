@@ -8,17 +8,6 @@
 
 import UIKit
 
-struct UrlFetcher: URLFetcher {}
-
-protocol ItemListFetcher: ImageFetcher {
-    func fetchItems()
-}
-
-protocol ItemLisDataSource {
-    func getThumnailURL(at: Int) -> URL?
-    func getNumberOfRows(section: Int) -> Int
-    func getItemAndDescriptionTuple(at: Int) -> (String, String)
-}
 
 class ListTableViewController: UITableViewController {
     

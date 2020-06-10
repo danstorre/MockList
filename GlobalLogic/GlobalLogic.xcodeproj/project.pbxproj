@@ -33,6 +33,9 @@
 		FB0793D9249178A100E1E042 /* URLSession+DataTaskCreatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0793D8249178A100E1E042 /* URLSession+DataTaskCreatorProtocol.swift */; };
 		FB0793E4249179C900E1E042 /* ItemListHolderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0793E3249179C900E1E042 /* ItemListHolderProtocol.swift */; };
 		FB0793E724917A6F00E1E042 /* DetailVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0793E624917A6F00E1E042 /* DetailVCProtocol.swift */; };
+		FB0793EB24917EA300E1E042 /* ItemDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0793EA24917EA300E1E042 /* ItemDataSourceProtocol.swift */; };
+		FB0793ED24917EDC00E1E042 /* ItemListFetcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0793EC24917EDC00E1E042 /* ItemListFetcherProtocol.swift */; };
+		FB0793EF24917F0E00E1E042 /* UrlFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0793EE24917F0E00E1E042 /* UrlFetcher.swift */; };
 		FB808727248EFF3F0098092A /* GoToDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB808726248EFF3E0098092A /* GoToDetail.swift */; };
 		FB95EFAE2488712D00ACDB24 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95EFAD2488712D00ACDB24 /* ImageService.swift */; };
 		FBA083AF2487FC450032788B /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA083AE2487FC450032788B /* ItemManager.swift */; };
@@ -97,6 +100,9 @@
 		FB0793D8249178A100E1E042 /* URLSession+DataTaskCreatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+DataTaskCreatorProtocol.swift"; sourceTree = "<group>"; };
 		FB0793E3249179C900E1E042 /* ItemListHolderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListHolderProtocol.swift; sourceTree = "<group>"; };
 		FB0793E624917A6F00E1E042 /* DetailVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCProtocol.swift; sourceTree = "<group>"; };
+		FB0793EA24917EA300E1E042 /* ItemDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataSourceProtocol.swift; sourceTree = "<group>"; };
+		FB0793EC24917EDC00E1E042 /* ItemListFetcherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListFetcherProtocol.swift; sourceTree = "<group>"; };
+		FB0793EE24917F0E00E1E042 /* UrlFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlFetcher.swift; sourceTree = "<group>"; };
 		FB808726248EFF3E0098092A /* GoToDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToDetail.swift; sourceTree = "<group>"; };
 		FB95EFAD2488712D00ACDB24 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		FBA083AE2487FC450032788B /* ItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				FBC209E4248446D10060848E /* ListTableViewController.swift */,
+				FBC209E72484527A0060848E /* ItemCell.swift */,
 			);
 			path = Internals;
 			sourceTree = "<group>";
@@ -184,6 +191,8 @@
 			children = (
 				FB079387249141F000E1E042 /* SelectableProtocol.swift */,
 				FB079390249142D300E1E042 /* GetSelectableObjectProtocol.swift */,
+				FB0793EA24917EA300E1E042 /* ItemDataSourceProtocol.swift */,
+				FB0793EC24917EDC00E1E042 /* ItemListFetcherProtocol.swift */,
 			);
 			path = OpenApis;
 			sourceTree = "<group>";
@@ -336,7 +345,6 @@
 			isa = PBXGroup;
 			children = (
 				FBA083BA248849520032788B /* DetailViewController.swift */,
-				FBC209E72484527A0060848E /* ItemCell.swift */,
 			);
 			path = Internals;
 			sourceTree = "<group>";
@@ -354,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				FB0793BD2491762300E1E042 /* UrlFetcher+Extension.swift */,
+				FB0793EE24917F0E00E1E042 /* UrlFetcher.swift */,
 			);
 			path = Internals;
 			sourceTree = "<group>";
@@ -556,10 +565,11 @@
 			isa = PBXGroup;
 			children = (
 				FB079397249143EF00E1E042 /* ImageFetcher */,
+				FBC209E3248446BF0060848E /* DetailScreen */,
 				FB0793932491433900E1E042 /* RouterToDetailItem */,
+				FBDA438A248FD0840093BCE7 /* DetailNavigation */,
 				FB0793952491436F00E1E042 /* NavigationDetailFlow */,
 				FB07938D2491427800E1E042 /* ItemListing */,
-				FBDA438A248FD0840093BCE7 /* DetailNavigation */,
 				FB0793E02491799300E1E042 /* ItemListDataSourceForTableView */,
 				FB0793DA249178CD00E1E042 /* DownSampler */,
 				FB0793DC249178EE00E1E042 /* JsonParser */,
@@ -568,7 +578,6 @@
 				FB0793BF2491763800E1E042 /* ItemService */,
 				FB0793B8249175BD00E1E042 /* UrlFetcher */,
 				FB0793CA249177B200E1E042 /* ImageService */,
-				FBC209E3248446BF0060848E /* DetailScreen */,
 				FB07939F2491682F00E1E042 /* ItemRepresentation */,
 				FB0793AF249169B200E1E042 /* ObserverMediator */,
 				FB0793A6249168F600E1E042 /* ItemCollection */,
@@ -732,6 +741,7 @@
 				FB07939E2491442700E1E042 /* ImageFetcher+Extension.swift in Sources */,
 				FB0793BE2491762300E1E042 /* UrlFetcher+Extension.swift in Sources */,
 				FBC209B12481971F0060848E /* AppDelegate.swift in Sources */,
+				FB0793EF24917F0E00E1E042 /* UrlFetcher.swift in Sources */,
 				FB079391249142D300E1E042 /* GetSelectableObjectProtocol.swift in Sources */,
 				FB0793B5249169EF00E1E042 /* ObserverMediator.swift in Sources */,
 				FB0793AC2491697500E1E042 /* PropertyObserverProtocol.swift in Sources */,
@@ -752,9 +762,11 @@
 				FB0793C32491767300E1E042 /* APIProtocolError.swift in Sources */,
 				FB95EFAE2488712D00ACDB24 /* ImageService.swift in Sources */,
 				FB0793D12491781900E1E042 /* ParserProtocol.swift in Sources */,
+				FB0793EB24917EA300E1E042 /* ItemDataSourceProtocol.swift in Sources */,
 				FB0793A3249168AC00E1E042 /* ItemErrors.swift in Sources */,
 				FBC209E82484527A0060848E /* ItemCell.swift in Sources */,
 				FB07938B2491422900E1E042 /* NavigationsToItem.swift in Sources */,
+				FB0793ED24917EDC00E1E042 /* ItemListFetcherProtocol.swift in Sources */,
 				FBC209E02482BBDC0060848E /* APIClient.swift in Sources */,
 				FBDA4389248FD0710093BCE7 /* NavigationDetailFlowSelection.swift in Sources */,
 				FB0793E724917A6F00E1E042 /* DetailVCProtocol.swift in Sources */,
