@@ -180,13 +180,13 @@
 			path = Internals;
 			sourceTree = "<group>";
 		};
-		FB07938D2491427800E1E042 /* ItemListing */ = {
+		FB07938D2491427800E1E042 /* ShowsAnListOfItems */ = {
 			isa = PBXGroup;
 			children = (
 				FB07938E2491428800E1E042 /* OpenApis */,
 				FB07938C2491426700E1E042 /* Internals */,
 			);
-			path = ItemListing;
+			path = ShowsAnListOfItems;
 			sourceTree = "<group>";
 		};
 		FB07938E2491428800E1E042 /* OpenApis */ = {
@@ -200,13 +200,13 @@
 			path = OpenApis;
 			sourceTree = "<group>";
 		};
-		FB0793932491433900E1E042 /* RouterToDetailItem */ = {
+		FB0793932491433900E1E042 /* PreparesAndPresentsADetailViewController */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793E524917A5E00E1E042 /* OpenApis */,
 				FB0793942491434800E1E042 /* Internals */,
 			);
-			path = RouterToDetailItem;
+			path = PreparesAndPresentsADetailViewController;
 			sourceTree = "<group>";
 		};
 		FB0793942491434800E1E042 /* Internals */ = {
@@ -217,12 +217,12 @@
 			path = Internals;
 			sourceTree = "<group>";
 		};
-		FB0793952491436F00E1E042 /* NavigationDetailFlow */ = {
+		FB0793952491436F00E1E042 /* HoldsAListOfSelectableItems */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793962491439700E1E042 /* Internals */,
 			);
-			path = NavigationDetailFlow;
+			path = HoldsAListOfSelectableItems;
 			sourceTree = "<group>";
 		};
 		FB0793962491439700E1E042 /* Internals */ = {
@@ -234,13 +234,13 @@
 			path = Internals;
 			sourceTree = "<group>";
 		};
-		FB079397249143EF00E1E042 /* ImageFetcher */ = {
+		FB079397249143EF00E1E042 /* HelpsToRetrieveAnImageFromAnUrl */ = {
 			isa = PBXGroup;
 			children = (
 				FB079398249143F500E1E042 /* OpenApis */,
 				FB079399249143FC00E1E042 /* Internals */,
 			);
-			path = ImageFetcher;
+			path = HelpsToRetrieveAnImageFromAnUrl;
 			sourceTree = "<group>";
 		};
 		FB079398249143F500E1E042 /* OpenApis */ = {
@@ -448,12 +448,12 @@
 			path = Internals;
 			sourceTree = "<group>";
 		};
-		FB0793DA249178CD00E1E042 /* DownSampler */ = {
+		FB0793DA249178CD00E1E042 /* ProvidesADownSampleGivenAUrlImage */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793DB249178D500E1E042 /* Internals */,
 			);
-			path = DownSampler;
+			path = ProvidesADownSampleGivenAUrlImage;
 			sourceTree = "<group>";
 		};
 		FB0793DB249178D500E1E042 /* Internals */ = {
@@ -464,12 +464,12 @@
 			path = Internals;
 			sourceTree = "<group>";
 		};
-		FB0793DC249178EE00E1E042 /* JsonParser */ = {
+		FB0793DC249178EE00E1E042 /* ParsersAnyObjectToJsonIfDecodable */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793DD249178FC00E1E042 /* Internals */,
 			);
-			path = JsonParser;
+			path = ParsersAnyObjectToJsonIfDecodable;
 			sourceTree = "<group>";
 		};
 		FB0793DD249178FC00E1E042 /* Internals */ = {
@@ -480,12 +480,12 @@
 			path = Internals;
 			sourceTree = "<group>";
 		};
-		FB0793DE2491793100E1E042 /* URLSessionExtensions */ = {
+		FB0793DE2491793100E1E042 /* ExtendsURLSessionFunctionalityToConformToDataTaskCreatorProtocol */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793DF2491794700E1E042 /* Internals */,
 			);
-			path = URLSessionExtensions;
+			path = ExtendsURLSessionFunctionalityToConformToDataTaskCreatorProtocol;
 			sourceTree = "<group>";
 		};
 		FB0793DF2491794700E1E042 /* Internals */ = {
@@ -496,13 +496,13 @@
 			path = Internals;
 			sourceTree = "<group>";
 		};
-		FB0793E02491799300E1E042 /* ItemListDataSourceForTableView */ = {
+		FB0793E02491799300E1E042 /* ProvidesInfoForAItemLisDataSource */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793E1249179B900E1E042 /* OpenApis */,
 				FB0793E2249179BE00E1E042 /* Internals */,
 			);
-			path = ItemListDataSourceForTableView;
+			path = ProvidesInfoForAItemLisDataSource;
 			sourceTree = "<group>";
 		};
 		FB0793E1249179B900E1E042 /* OpenApis */ = {
@@ -567,16 +567,16 @@
 		FBC209AF2481971F0060848E /* GlobalLogic */ = {
 			isa = PBXGroup;
 			children = (
-				FB079397249143EF00E1E042 /* ImageFetcher */,
-				FBC209E3248446BF0060848E /* DetailScreen */,
-				FB0793932491433900E1E042 /* RouterToDetailItem */,
-				FBDA438A248FD0840093BCE7 /* DetailNavigation */,
-				FB0793952491436F00E1E042 /* NavigationDetailFlow */,
-				FB07938D2491427800E1E042 /* ItemListing */,
-				FB0793E02491799300E1E042 /* ItemListDataSourceForTableView */,
-				FB0793DA249178CD00E1E042 /* DownSampler */,
-				FB0793DC249178EE00E1E042 /* JsonParser */,
-				FB0793DE2491793100E1E042 /* URLSessionExtensions */,
+				FB079397249143EF00E1E042 /* HelpsToRetrieveAnImageFromAnUrl */,
+				FBC209E3248446BF0060848E /* PresentsDetailsOfAGivenItemWithItsImage */,
+				FB0793932491433900E1E042 /* PreparesAndPresentsADetailViewController */,
+				FBDA438A248FD0840093BCE7 /* ASelectableItemThatDelegateRouterNavigationWhenSelected */,
+				FB0793952491436F00E1E042 /* HoldsAListOfSelectableItems */,
+				FB07938D2491427800E1E042 /* ShowsAnListOfItems */,
+				FB0793E02491799300E1E042 /* ProvidesInfoForAItemLisDataSource */,
+				FB0793DA249178CD00E1E042 /* ProvidesADownSampleGivenAUrlImage */,
+				FB0793DC249178EE00E1E042 /* ParsersAnyObjectToJsonIfDecodable */,
+				FB0793DE2491793100E1E042 /* ExtendsURLSessionFunctionalityToConformToDataTaskCreatorProtocol */,
 				FB0793CD249177F000E1E042 /* GlobalLogicServices */,
 				FB0793BF2491763800E1E042 /* ItemService */,
 				FB0793B8249175BD00E1E042 /* UrlFetcher */,
@@ -608,13 +608,13 @@
 			path = GlobalLogicTests;
 			sourceTree = "<group>";
 		};
-		FBC209E3248446BF0060848E /* DetailScreen */ = {
+		FBC209E3248446BF0060848E /* PresentsDetailsOfAGivenItemWithItsImage */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793B62491755C00E1E042 /* Open Apis */,
 				FB0793B72491756200E1E042 /* Internals */,
 			);
-			path = DetailScreen;
+			path = PresentsDetailsOfAGivenItemWithItsImage;
 			sourceTree = "<group>";
 		};
 		FBC209EC2485685A0060848E /* Controller */ = {
@@ -626,13 +626,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		FBDA438A248FD0840093BCE7 /* DetailNavigation */ = {
+		FBDA438A248FD0840093BCE7 /* ASelectableItemThatDelegateRouterNavigationWhenSelected */ = {
 			isa = PBXGroup;
 			children = (
 				FB0793832491418600E1E042 /* OpenApis */,
 				FB079386249141C200E1E042 /* Internals */,
 			);
-			path = DetailNavigation;
+			path = ASelectableItemThatDelegateRouterNavigationWhenSelected;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
